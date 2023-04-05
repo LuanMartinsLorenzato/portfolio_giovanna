@@ -1,0 +1,10 @@
+@tailwind utilities;
+@tailwind components;
+
+.nav{
+    @apply w-full flex justify-end backdrop-blur;
+    
+    button {
+        @apply pr-[45px] text-color;
+    }
+}
