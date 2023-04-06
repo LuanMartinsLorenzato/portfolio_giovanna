@@ -1,8 +1,11 @@
 @tailwind utilities;
 @tailwind components;
 
-.nav{
-    @apply w-full flex justify-end backdrop-blur;
+// .linha {
+//     @apply stroke-color-pink border-2 border-purple-800;
+// }
+.header{
+    @apply w-full flex justify-end backdrop-blur bg-white/5 h-24;
     
     button {
         @apply pr-[45px] text-color;
