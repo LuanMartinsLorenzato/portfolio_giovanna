@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const tabs = [
-  'Home',
-  'Sobre',
-  'Projetos',
-  'Skills',
-  'Contato',
+  {name: 'Home', path: '/'},
+  {name: 'Sobre', path: '/sobre'},
+  {name: 'Projetos', path: '/projetos'},
+  {name: 'Skills', path: '/skills'},
+  {name: 'Contato', path: '/contato'},
 ]
 
 export default function Header (): JSX.Element {
@@ -23,6 +23,7 @@ export default function Header (): JSX.Element {
   return(
     <>
       <header className={styles.header} onClick={isMobile ? handleMenu : undefined}>
+
         {
           isMobile ? (
             <button onClick={handleMenu} className={styles.menuBtn}>
@@ -30,12 +31,13 @@ export default function Header (): JSX.Element {
             </button>
           ) :
           (
+            
             <nav>
               {
                 tabs.map(tab => (
-                  <button key={tab} className={styles.tabs}>
-                    {tab}
-                  </button>
+                  <Link href={tab.path} key={tab.name} className={styles.tabs}>
+                    {tab.name}
+                  </Link>
                 ))
               }
             </nav>
@@ -44,12 +46,12 @@ export default function Header (): JSX.Element {
         {showMenuMobile && (
           <>
             <div className={styles.overlay}>
-              <nav>
+              <nav className={styles.navBar}>
                 {
                   tabs.map(tab => (
-                    <button key={tab} className={styles.tabs}>
-                      {tab}
-                    </button>
+                    <Link href={tab.path} key={tab.name} className={styles.tabs}>
+                      {tab.name}
+                    </Link>
                   ))
                 }
               </nav>
