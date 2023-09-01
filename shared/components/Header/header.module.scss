@@ -2,19 +2,15 @@
 @tailwind utilities;
 @tailwind components;
 
-// .linha {
-//     @apply stroke-color-pink border-2 border-purple-800;
-// }
-
 @include mobile() {
   .header{
-    @apply w-full flex justify-between bg-transparent h-24 fixed;
+    @apply w-full flex justify-between bg-transparent h-24;
       
     .actions {
       @apply flex pl-6 gap-5;
 
       .languages_container {
-        @apply absolute bottom-[-20px] flex flex-col border-l-[0.5px] border-[#646464] pl-2 transition ease-in-out duration-700 -translate-x-2;
+        @apply absolute top-[70px] flex flex-col border-l-[0.5px] border-[#646464] pl-2 transition ease-in-out duration-700 -translate-x-2;
       }
 
       .slide_off {
@@ -46,7 +42,7 @@
       }
   
       .navBar {
-        @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] backdrop-blur-md bg-white/10;
+        @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] backdrop-blur-md bg-white/10 z-10;
   
         .name_icon {
           @apply absolute left-6 top-[31px];
