@@ -1,0 +1,30 @@
+@import '../../styles/mixins'; 
+@tailwind utilities;
+@tailwind components;
+
+@include mobile() {
+  .container {
+    @apply w-full px-6 top-6 h-screen pt-14;
+
+    .content_description {
+      @apply flex flex-col gap-4;
+
+      h1 {
+        @apply -rotate-6 mb-1;
+      }
+
+      span {
+        @apply self-center font-00 subtitle-color-dark text-size-01;
+      }
+
+      p {
+        @apply text-right font-00 subtitle-color-dark text-size-01;
+
+        span {
+          @apply title-color subtitle-font-00 subtitle-size-01;
+        }
+      }
+    }
+
+  }
+}
