@@ -1,2 +1,6 @@
 @tailwind base;
 @tailwind utilities;
+
+span {
+    @apply subtitle-color-light text-font text-xs;
+}

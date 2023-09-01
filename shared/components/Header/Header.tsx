@@ -1,5 +1,10 @@
 import styles from './header.module.scss';
 import menuIcon from '../../../public/assets/menu-icon.svg';
+import closeMenuIcon from '../../../public/assets/close-menu-icon-light.svg';
+import nameIcon from '../../../public/assets/name-icon.svg';
+import languageIcon from '../../../public/assets/language-icon.svg';
+import dayIcon from '../../../public/assets/day-icon.svg';
+import nightIcon from '../../../public/assets/night-icon.svg';
 import useWindowResize from '../../hooks/useWindowResize'
 import Link from 'next/link';
 import { useState } from 'react';
@@ -8,27 +13,59 @@ const tabs = [
   {name: 'Home', path: '/'},
   {name: 'Sobre', path: '/sobre'},
   {name: 'Projetos', path: '/projetos'},
-  {name: 'Skills', path: '/skills'},
   {name: 'Contato', path: '/contato'},
 ]
 
 export default function Header (): JSX.Element {
-  let isMobile = useWindowResize().width < 500 ? true : false;
+  let isMobile = useWindowResize().width < 480 ? true : false;
   let [showMenuMobile, setShowMenuMobile] = useState(false);
+  let [isActiveLanguage, setIsActiveLanguage] = useState(false);
+  let [iconColors, setIconColors] = useState(nightIcon.src);
 
   const handleMenu = () => {
     setShowMenuMobile(!showMenuMobile);
   }
+
+  const handleLanguage = () => {
+    let slideOffElement = document.getElementById('slideOff')
+    isActiveLanguage ? 
+      slideOffElement?.classList.add(styles.slide_off) : slideOffElement?.classList.remove(styles.slide_off);
+    setIsActiveLanguage(!isActiveLanguage);
+  }
+
+  const handleColors = () => {
+    iconColors === nightIcon.src ? 
+      setIconColors(dayIcon.src) : 
+      setIconColors(nightIcon.src);
+    console.log(iconColors);
+  }
   
   return(
     <>
-      <header className={styles.header} onClick={isMobile ? handleMenu : undefined}>
-
+      <header className={styles.header} onClick={isMobile && showMenuMobile ? handleMenu : undefined}>
         {
           isMobile ? (
-            <button onClick={handleMenu} className={styles.menuBtn}>
-              <img src={menuIcon.src} alt="Menu" />
-            </button>
+            <>
+              <div className={styles.actions}>
+                <button onClick={handleLanguage}>
+                  <img src={languageIcon.src} alt="Languages" width={25} height={25}/>
+                </button>
+                <div className={`${styles.languages_container} ${styles.slide_off}`} id='slideOff'>
+                  <button>
+                    <span>English</span>
+                  </button>
+                  <button>
+                    <span>Português - Br</span>
+                  </button>
+                </div>
+                <button onClick={handleColors}>
+                  <img src={iconColors} alt="Change colors" width={25} height={25}/>
+                </button>
+              </div>
+              <button onClick={handleMenu} className={!showMenuMobile ? `${styles.menuBtn}` : `${styles.blur_menu} ${styles.menuBtn}`}>
+                <img src={menuIcon.src} alt="Menu" />
+              </button>
+            </>
           ) :
           (
             
@@ -47,13 +84,29 @@ export default function Header (): JSX.Element {
           <>
             <div className={styles.overlay}>
               <nav className={styles.navBar}>
-                {
-                  tabs.map(tab => (
-                    <Link href={tab.path} key={tab.name} className={styles.tabs}>
-                      {tab.name}
-                    </Link>
-                  ))
-                }
+
+                {/* Borda lateral esquerda */}
+                <div className={styles.border_position}>
+                  <div className={styles.border_gradient} />
+                  <div className={styles.border_gradient} />
+                </div>
+
+                {/* Icone do nome */}
+                <img src={nameIcon.src} alt="Menu" className={styles.name_icon}/>
+
+                {/* Botão de fechar */}
+                <button onClick={handleMenu} className={styles.closeMenuBtn}>
+                  <img src={closeMenuIcon.src} alt="Menu" />
+                </button>
+                <div className={styles.container_tabs}>
+                  {
+                    tabs.map(tab => (
+                      <Link href={tab.path} key={tab.name} className={styles.tabs}>
+                        {tab.name}
+                      </Link>
+                    ))
+                  }
+                </div>
               </nav>
             </div>
           </>
