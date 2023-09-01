@@ -1,0 +1,54 @@
+@import '../../styles/mixins'; 
+@tailwind utilities;
+@tailwind components;
+
+@include mobile() {
+  .container {
+    @apply w-full px-6 top-6 h-screen pt-14 flex flex-col;
+
+    .about_container {
+      @apply flex flex-col w-1/2 self-center;
+
+      h2 {
+        @apply absolute first:-rotate-2 last:-rotate-12  w-fit first:self-start last:translate-y-7 last:translate-x-7 last:self-end;
+      }
+    }
+
+    .container_description {
+      @apply border border-[#666] w-full h-full mt-32 rounded-2xl backdrop-blur-sm bg-white/5 shadow-lg flex flex-col;
+
+      .border_img {
+        @apply w-[117px] h-[117px] border border-[#B06DCF] absolute rounded-full -top-7 -left-3 bg-black flex justify-end;
+      }
+
+      .online_stats {
+        @apply w-5 h-5 rounded-full bg-[#93E774] absolute bottom-1 right-3;
+      }
+
+      .low_description {
+        @apply h-[67px] flex flex-col self-end w-[70%] justify-center;
+
+        span {
+          @apply text-color-dark text-size-01 font-00 text-center;
+        }
+
+        .ageAndLocation {
+          @apply flex justify-center gap-10 mt-2;
+
+          .items {
+            @apply flex gap-1;
+
+            span {
+              @apply text-[10px];
+            }
+          }
+        }
+      }
+
+      hr {
+        @apply border-[#666]
+      }
+    }
+    
+  }
+}
