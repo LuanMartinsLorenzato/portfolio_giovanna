@@ -72,9 +72,9 @@ export default function Header (): JSX.Element {
             <nav>
               {
                 tabs.map(tab => (
-                  <Link href={tab.path} key={tab.name} className={styles.tabs}>
+                  <button key={tab.name} className={styles.tabs}>
                     {tab.name}
-                  </Link>
+                  </button>
                 ))
               }
             </nav>
