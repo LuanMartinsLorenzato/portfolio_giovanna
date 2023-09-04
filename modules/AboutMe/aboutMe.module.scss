@@ -18,7 +18,7 @@
       @apply border border-[#666] w-full h-[501px] mt-32 rounded-2xl backdrop-blur-sm bg-white/5 shadow-lg flex flex-col;
 
       .border_img {
-        @apply w-[117px] h-[117px] border border-[#B06DCF] absolute rounded-full -top-7 -left-3 bg-black flex justify-end;
+        @apply w-[117px] h-[117px] border border-[#B06DCF] relative rounded-full -top-7 -left-3 bg-black flex justify-end;
       }
 
       .online_stats {
