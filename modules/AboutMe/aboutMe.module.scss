@@ -52,20 +52,8 @@
       .high_description {
         @apply w-full h-full pt-10 flex flex-col px-3;
 
-        .div_mensage {
-          @apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-1 relative;
-
-          .left_mensage {
-            @apply absolute -left-2 bottom-0;
-          }
-
-          p {
-            @apply text-color-dark text-font text-xs;
-          }
-        }
-
         .container_input {
-          @apply absolute bottom-3 w-[93%] h-9 self-center border-[0.5px] border-[#666] rounded-md bg-[#4F4F4F]/50 flex justify-around items-center;
+          @apply mt-auto mb-2 w-[93%] h-9 self-center border-[0.5px] border-[#666] rounded-md bg-[#4F4F4F]/50 flex justify-around items-center;
 
           .button_getInTouch {
             @apply w-4/5 h-full text-left flex items-center pl-2;

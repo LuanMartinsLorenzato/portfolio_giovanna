@@ -1,0 +1,25 @@
+@import '../../../styles/_mixins.scss'; 
+@tailwind utilities;
+@tailwind components;
+
+@include mobile() {
+  .container_messages {
+    @apply h-full flex flex-col mb-1;
+
+		.position_messages {
+			@apply mt-auto;
+		}
+
+		.message {
+			@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-1 relative;
+
+			.left_mensage {
+       @apply absolute -left-2 bottom-0;
+     	}
+
+			p {
+				@apply text-color-dark text-font text-xs;
+			}
+		}
+  }
+}
