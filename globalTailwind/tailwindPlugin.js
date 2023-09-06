@@ -4,6 +4,7 @@ const plugin = require('tailwindcss/plugin');
 let namedStyles = {
 	'.font-00': { fontFamily: 'Questrial'},
 	'.font-01': { fontFamily: 'Rock Salt'},
+	'.height-00': { lineHeight: '15px'},
 	'.header-font-00': { fontFamily: 'Questrial', fontSize: '25px' },
 	'.header-font-01': { fontFamily: 'Rock Salt', fontSize: '20px' },
 	'.title-font': { fontFamily: 'Rock Salt' },
