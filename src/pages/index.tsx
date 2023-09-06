@@ -3,6 +3,7 @@ import Header from '../../shared/components/Header/Header';
 import Home from 'modules/Home/Home';
 import AboutMe from 'modules/AboutMe/AboutMe';
 import bg from '../../public/assets/gif/bgImage.gif'
+import Projects from 'modules/Projects/Projects';
 
 export default function OnePage() {
   return (
@@ -14,8 +15,8 @@ export default function OnePage() {
         <Header />
         <Home />
         <AboutMe />
-        {/*<Projects />
-        <Skills />
+        <Projects />
+        {/*<Skills />
         <Contact />*/} 
       </main>
     </>

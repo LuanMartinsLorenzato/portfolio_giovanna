@@ -4,7 +4,8 @@
 
 @include mobile() {
   .container {
-    @apply w-full px-6 top-6 h-screen pt-14;
+    @apply w-full px-6 top-6 pt-14;
+    height: calc(100vh - 96px);
 
     .content_description {
       @apply flex flex-col gap-4;

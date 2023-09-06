@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+@tailwind utilities;
+@tailwind components;
+
+.container {
+  @apply w-full px-3 h-screen;
+
+  h2 {
+    @apply -rotate-12;
+  }
+}
