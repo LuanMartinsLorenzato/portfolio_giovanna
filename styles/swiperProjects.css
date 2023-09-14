@@ -5,4 +5,13 @@
 
 .swiper-slide {
   border-radius: 15px;
+  border: 0.5px solid #666;
+}
+
+.swiper-pagination {
+  bottom: -20px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #B06DCF99 !important;
 }

@@ -13,9 +13,43 @@
     @apply flex flex-col;
 
     .project {
-      @apply h-[270px] w-full mt-20;
+      @apply w-full mt-20 flex flex-col mb-6;
+
+      .header_description {
+        @apply flex w-[330px] self-center items-center gap-[10px] mb-2;
+
+        h3 {
+          @apply font-00 text-xl text-[#CBCBCB] min-w-fit;
+        }
+
+        .line {
+          @apply w-full bg-[#B06DCF] h-[1.5px] rounded-[2px];
+        }
+
+        img {
+          @apply ml-[15px];
+        }
+      }
+
+      .description {
+        @apply flex relative justify-center;
+
+        .border_line {
+          @apply absolute left-2 bottom-0 w-[30%] h-[40%] border-l-[1.5px] border-b-[1.5px] border-[#A65AC9] rounded-bl-[60px];
+        }
+
+        p {
+          @apply w-[300px] text-sm text-font text-[#fff] h-[209px] mb-[25px] leading-[19px];
+        }
+      }
+    }
+    .overlay {
+      @apply w-full h-full absolute top-0 bg-[#252525]/50 backdrop-blur-sm transition-opacity duration-700;
     }
 
+    .overlay:hover {
+      @apply transition-opacity opacity-0 duration-700;
+    }
     .thumb {
       @apply h-full w-full object-cover;
     }
