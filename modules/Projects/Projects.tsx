@@ -10,7 +10,6 @@ import link_icon from '../../public/assets/link_icon.svg'
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
-// import required modules
 
 const Projects: React.FC = () => {
 	const projectsService = new ProjectsService('giovanna_projects');
@@ -23,7 +22,7 @@ const Projects: React.FC = () => {
 			const data: ProjectsType[] = await projectsService.getProjectsByCollection()
 			if (isMounted && data.length > 0) {
 				setProjects(data)
-				setCurrentProject(data[1]);
+				setCurrentProject(data[0]);
 			}
 		}
 		getProjects();
