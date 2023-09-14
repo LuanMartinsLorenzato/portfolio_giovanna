@@ -3,9 +3,21 @@
 @tailwind components;
 
 .container {
-  @apply w-full px-3 h-screen;
+  @apply w-full px-3 h-screen relative;
 
   h2 {
     @apply -rotate-12;
+  }
+
+  .projects_wrap {
+    @apply flex flex-col;
+
+    .project {
+      @apply h-[270px] w-full mt-20;
+    }
+
+    .thumb {
+      @apply h-full w-full object-cover;
+    }
   }
 }

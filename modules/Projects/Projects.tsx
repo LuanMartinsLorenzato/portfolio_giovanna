@@ -1,33 +1,74 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './projects.module.scss'
-import firebase from '../../shared/services/firebase'
-import { ref, getDownloadURL } from "firebase/storage";
-import { storage } from '../../shared/services/firebase';
+import ProjectsService from 'shared/services/projects-service';
+import { ProjectsType } from 'shared/utils/types';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCards, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+// import required modules
 
 const Projects: React.FC = () => {
+	const projectsService = new ProjectsService('giovanna_projects');
+	const [projects, setProjects] = useState<ProjectsType[]>()
+	const [currentProject, setCurrentProject] = useState<ProjectsType>()
 
 	useEffect(() => {
-		getDownloadURL(ref(storage, 'giovanna/media_kit/media_kit_img1.jpg')).then((url) => {
-			console.log(url);
-		})
-    // Faça algo com o objeto 'auth' do Firebase aqui
-  }, []);
-
-	const projectsData = [
-		{
-			name: 'Media kit',
-			imgs : [{url: 'caminho'}, {url: 'caminho'}, {url: 'caminho'}, {url: 'caminho'}],
-			description: 'Desenvolvido para uma influenciadora digital com foco na cultura oriental, o Mídia Kit foi criado com o intuito de preservar a identidade visual pessoal de Paloma, enquanto apresenta de forma clara seus conteúdos e informações essenciais. O design foi criado para ser diferenciado e exclusivo, transmitindo a personalidade única da cliente em todo o projeto. Dessa forma, criamos um portfólio distintivo, permitindo maiores oportunidades de parcerias e crescimento para Paloma.'
+		let isMounted = true;
+		const getProjects = async () => {
+			const data: ProjectsType[] = await projectsService.getProjectsByCollection()
+			if (isMounted && data.length > 0) {
+				setProjects(data)
+				setCurrentProject(data[1]);
+			}
 		}
-	]
+		getProjects();
+		return () => {
+      isMounted = false; 
+    };
+	}, [])
+
+	const setIndexProject = (indexProject: number) => {
+		if (!projects) return;
+		setCurrentProject(projects[indexProject])
+	}
+
 	return (
-		<>
-			<section className={styles.container}>
-				<h2>Projects</h2>
-				<img src="https://firebasestorage.googleapis.com/v0/b/portfolios-6f9be.appspot.com/o/giovanna%2Fmedia_kit%2Fmedia_kit_img1.jpg?alt=media&token=72d3815a-5d9f-4df2-96bf-b8d578c9363e" alt=""  width={100} height={100}/>
-			</section>
-		</>
+		<section className={styles.container}>
+			<h2>Projects</h2>
+			<div className={styles.projects_wrap}>
+				<div className={styles.project}>
+					<div className={styles.header_description}>
+						<h3>{currentProject?.title}</h3>
+						<div className={styles.line} />
+						<img src="icon" alt="Link Icon" />
+					</div>
+					<div className={styles.description}>
+						<div className={styles.border_line} />
+						<p>{currentProject?.description}</p>
+					</div>
+				</div>
+				<Swiper
+					effect={'cards'}
+					grabCursor={true}
+					modules={[EffectCards, Pagination]}
+					className="mySwiper"
+					pagination={{
+						dynamicBullets: true,
+					}}
+					onSlideChange={(swiper) => setIndexProject(swiper.activeIndex)}
+				>
+					{projects?.map((project, i) => (
+						<SwiperSlide key={i}>
+							<img src={project.thumb} alt="Image thumb" className={styles.thumb} onClick={() => console.log('função')}/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+		</section>
 	);
 };
 
