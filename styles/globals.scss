@@ -9,11 +9,16 @@
     font-style: normal;
 }
 
+* {
+    @apply scroll-smooth;
+}
+
 span {
     @apply subtitle-color-light text-font text-xs;
 }
 
-h1, h2 {
+h1,
+h2 {
     @apply title-color title-font;
 }
 

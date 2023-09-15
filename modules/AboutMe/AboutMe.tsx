@@ -33,46 +33,44 @@ const AboutMe: React.FC = () => {
 	}
 
 	return (
-		<>
-			<section className={styles.container}>
-				<div className={styles.about_container}>
-					<h2>About</h2>
-					<h2>me!</h2>
-				</div>
-				<section className={styles.container_description}>
-					<div className={styles.wrap_low_description}>
-						<div className={styles.border_img}>
-							{/* <img src={img_stats.src} alt="Image to about me" /> */}
-							<div className={styles.online_stats}/>
-						</div>
-						<div className={styles.low_description}>
-							<span>Giovanna Conti Martins</span>
-							<div className={styles.ageAndLocation}>
-								<div className={styles.items}>
-									<img src={celebrate_icon.src} alt="Celebrate Icon" width={12} height={12} />
-									<span>{getAge()}</span>
-								</div>
-								<div className={styles.items}>
-									<img src={map_icon.src} alt="Map Icon" width={22} height={13} />
-									<span>{getLocation()}</span>
-								</div>
+		<section className={styles.container} id='about'>
+			<div className={styles.about_container}>
+				<h2>About</h2>
+				<h2>me!</h2>
+			</div>
+			<section className={styles.container_description}>
+				<div className={styles.wrap_low_description}>
+					<div className={styles.border_img}>
+						{/* <img src={img_stats.src} alt="Image to about me" /> */}
+						<div className={styles.online_stats} />
+					</div>
+					<div className={styles.low_description}>
+						<span>Giovanna Conti Martins</span>
+						<div className={styles.ageAndLocation}>
+							<div className={styles.items}>
+								<img src={celebrate_icon.src} alt="Celebrate Icon" width={12} height={12} />
+								<span>{getAge()}</span>
+							</div>
+							<div className={styles.items}>
+								<img src={map_icon.src} alt="Map Icon" width={22} height={13} />
+								<span>{getLocation()}</span>
 							</div>
 						</div>
 					</div>
-					<hr />
-					<div className={styles.high_description}>
-						<AnimateChat messages={messagesArr} />
-						<div className={styles.container_input}>
-							<img src={emoji_icon.src} alt="Map Icon" width={20} height={20} />
-							<button className={styles.button_getInTouch} onClick={() => { popUp() }} >
-								<span>Get in touch...</span>
-							</button>
-							<img src={send_icon.src} alt="Map Icon" width={20} height={20} />
-						</div>
+				</div>
+				<hr />
+				<div className={styles.high_description}>
+					<AnimateChat messages={messagesArr} />
+					<div className={styles.container_input}>
+						<img src={emoji_icon.src} alt="Map Icon" width={20} height={20} />
+						<button className={styles.button_getInTouch} onClick={() => { popUp() }} >
+							<span>Get in touch...</span>
+						</button>
+						<img src={send_icon.src} alt="Map Icon" width={20} height={20} />
 					</div>
-				</section>
+				</div>
 			</section>
-		</>
+		</section>
 	);
 };
 

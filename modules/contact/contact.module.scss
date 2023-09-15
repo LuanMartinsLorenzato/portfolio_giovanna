@@ -1,0 +1,59 @@
+@import '../../styles/mixins';
+@tailwind utilities;
+@tailwind components;
+
+.container_contact {
+  @apply flex flex-col gap-[50px];
+
+  .wrap_header {
+    @apply w-[384px] flex flex-col self-center justify-center;
+
+    h3 {
+      @apply font-01 text-[#B06DCF] text-[40px];
+    }
+
+    .and {
+      @apply text-[15px] text-[#838383];
+    }
+
+    .second_p {
+      @apply text-[20px] text-[#CBCBCB];
+
+      span {
+        @apply text-[30px] subtitle-font-00 text-[#A65AC9];
+      }
+    }
+
+    .and, .second_p {
+      @apply font-00;
+    }
+
+    h3, p {
+      @apply w-fit self-center;
+    }
+  }
+
+  .wrap_contacts {
+    @apply w-[348px] flex flex-col gap-[60px] self-center;
+
+    .contact {
+      @apply flex gap-3;
+
+      .wrap_content {
+        @apply flex flex-col justify-center gap-3;
+
+        p {
+          @apply first:subtitle-color-dark font-00 first:text-size-01 w-fit last:text-[16px] last:text-[#fff];
+        }
+      }
+    }
+  }
+
+  .developed_by {
+    @apply mt-auto flex justify-center;
+
+    p {
+      @apply text-[10px] text-color-dark font-00;
+    }
+  }
+}

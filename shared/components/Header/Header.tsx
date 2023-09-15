@@ -10,10 +10,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const tabs = [
-  {name: 'Home', path: '/'},
-  {name: 'Sobre', path: '/sobre'},
-  {name: 'Projetos', path: '/projetos'},
-  {name: 'Contato', path: '/contato'},
+  {name: 'Home', path: '#home'},
+  {name: 'Sobre', path: '#about'},
+  {name: 'Projetos', path: '#projects'},
+  {name: 'Contato', path: '#contact'},
 ]
 
 export default function Header (): JSX.Element {
@@ -101,9 +101,9 @@ export default function Header (): JSX.Element {
                 <div className={styles.container_tabs}>
                   {
                     tabs.map(tab => (
-                      <Link href={tab.path} key={tab.name} className={styles.tabs}>
+                      <a href={tab.path} key={tab.name} className={styles.tabs}>
                         {tab.name}
-                      </Link>
+                      </a>
                     ))
                   }
                 </div>

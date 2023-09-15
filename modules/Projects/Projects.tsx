@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
 	}
 
 	return (
-		<section className={styles.container}>
+		<section className={styles.container} id='projects'>
 			{isActiveModal ? (
 				<>
 					<ModalImages 

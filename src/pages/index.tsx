@@ -4,6 +4,7 @@ import Home from 'modules/Home/Home';
 import AboutMe from 'modules/AboutMe/AboutMe';
 import bg from '../../public/assets/gif/bgImage.gif'
 import Projects from 'modules/Projects/Projects';
+import Contact from 'modules/contact/Contact';
 
 export default function OnePage() {
   return (
@@ -16,8 +17,7 @@ export default function OnePage() {
         <Home />
         <AboutMe />
         <Projects />
-        {/*<Skills />
-        <Contact />*/} 
+        <Contact />
       </main>
     </>
   )
