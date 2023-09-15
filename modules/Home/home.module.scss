@@ -4,7 +4,7 @@
 
 @include mobile() {
   .container {
-    @apply w-full px-6 top-6 pt-14;
+    @apply w-full px-6 top-6 pt-[75px];
     height: calc(100vh - 96px);
 
     .content_description {

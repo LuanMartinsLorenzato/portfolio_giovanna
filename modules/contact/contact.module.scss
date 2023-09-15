@@ -3,7 +3,7 @@
 @tailwind components;
 
 .container_contact {
-  @apply flex flex-col gap-[50px];
+  @apply flex flex-col gap-[50px] pt-8;
 
   .wrap_header {
     @apply w-[384px] flex flex-col self-center justify-center;
