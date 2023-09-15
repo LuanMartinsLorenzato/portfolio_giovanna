@@ -15,7 +15,9 @@
     }
 
     .container_description {
-      @apply border border-[#666] w-full h-[501px] mt-32 rounded-2xl backdrop-blur-sm bg-white/5 shadow-lg flex flex-col;
+      @apply border border-[#666] w-full h-[501px] mt-32 rounded-2xl bg-white/5 shadow-lg flex flex-col;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px); 
 
       .wrap_low_description {
         @apply w-full h-[67px] flex;

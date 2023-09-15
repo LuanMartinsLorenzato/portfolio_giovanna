@@ -42,7 +42,9 @@
       }
   
       .navBar {
-        @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] backdrop-blur-md bg-white/10 z-10;
+        @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px); 
   
         .name_icon {
           @apply absolute left-6 top-[31px];

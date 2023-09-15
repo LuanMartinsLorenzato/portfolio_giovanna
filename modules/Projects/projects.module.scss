@@ -44,7 +44,9 @@
       }
     }
     .overlay {
-      @apply w-full h-full absolute top-0 bg-[#252525]/50 backdrop-blur-sm transition-opacity duration-700;
+      @apply w-full h-full absolute top-0 bg-[#252525]/50 transition-opacity duration-700;
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px); 
     }
 
     .overlay:hover {
