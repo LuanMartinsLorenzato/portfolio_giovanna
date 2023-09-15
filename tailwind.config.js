@@ -9,7 +9,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('./globalTailwind/tailwindPlugin')
+    require('./globalTailwind/tailwindPlugin'),
+    require('tailwindcss-filters')
   ],
 }
 
