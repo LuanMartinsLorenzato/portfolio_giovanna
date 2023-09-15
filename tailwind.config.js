@@ -10,7 +10,6 @@ module.exports = {
   },
   plugins: [
     require('./globalTailwind/tailwindPlugin'),
-    require('tailwindcss-filters')
   ],
 }
 

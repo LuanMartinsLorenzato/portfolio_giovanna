@@ -8,6 +8,7 @@ interface ModalInterface {
 const ModalImages: React.FC<ModalInterface> = ({images, closeModal}) => {
   return (
     <div className={styles.container_modal}>
+      <div className={styles.blur_overlay} />
       <button onClick={() => closeModal()}>
         <img src={close_menu_icon_black.src} alt="Close modal" loading='lazy' height={20} width={20} />
       </button>
