@@ -6,7 +6,11 @@ module.exports = {
     "./modules/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'stats': "url('/assets/imgs/img_stats.png')",
+      }
+    },
   },
   plugins: [
     require('./globalTailwind/tailwindPlugin'),

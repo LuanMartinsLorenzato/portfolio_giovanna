@@ -5,7 +5,7 @@ import celebrate_icon from '../../public/assets/celebrate_icon.svg'
 import map_icon from '../../public/assets/map_icon.svg'
 import emoji_icon from '../../public/assets/emoji_icon.svg'
 import send_icon from '../../public/assets/send_icon.svg'
-//import imgStatsGi from '../../public/imgs/img-stats-gi.jpg'
+import img_stats from '../../public/assets/imgs/img_stats.png'
 import fig_luck from '../../public/imgs/fig_luck.png'
 import AnimateChat from '../../shared/components/animateChat/animateChat'
 
@@ -42,7 +42,7 @@ const AboutMe: React.FC = () => {
 				<section className={styles.container_description}>
 					<div className={styles.wrap_low_description}>
 						<div className={styles.border_img}>
-							{/*<img src={imgStatsGi.src} alt="Image to about me" />*/}
+							{/* <img src={img_stats.src} alt="Image to about me" /> */}
 							<div className={styles.online_stats}/>
 						</div>
 						<div className={styles.low_description}>

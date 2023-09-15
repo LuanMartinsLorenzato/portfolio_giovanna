@@ -23,11 +23,11 @@
         @apply w-full h-[67px] flex;
 
         .border_img {
-          @apply w-[117px] h-[117px] border border-[#B06DCF] relative rounded-full -top-8 -left-1 bg-black flex justify-end;
-        }
-
-        .online_stats {
-          @apply w-[17px] h-[17px] rounded-full bg-[#93E774] absolute bottom-0 right-4;
+          @apply w-[117px] h-[117px] border border-[#B06DCF] relative rounded-full -top-8 -left-1 bg-stats flex justify-end bg-cover bg-no-repeat;
+        
+          .online_stats {
+            @apply w-[17px] h-[17px] rounded-full bg-[#93E774] absolute bottom-0 right-4;
+          }
         }
 
         .low_description {
