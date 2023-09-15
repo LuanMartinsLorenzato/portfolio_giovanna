@@ -34,7 +34,7 @@
   }
 
   .wrap_contacts {
-    @apply w-[348px] flex flex-col gap-[60px] self-center;
+    @apply w-[348px] flex flex-col gap-[60px] self-center mb-12;
 
     .contact {
       @apply flex gap-3;
