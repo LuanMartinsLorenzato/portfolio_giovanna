@@ -8,4 +8,8 @@
 	button {
 		@apply h-5 w-5 absolute top-0 right-0;
 	}
+
+	.error_notImages {
+		@apply self-center text-3xl subtitle-font-00 title-color;
+	}
 }

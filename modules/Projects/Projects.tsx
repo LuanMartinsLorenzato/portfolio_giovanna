@@ -43,8 +43,8 @@ const Projects: React.FC = () => {
 			{isActiveModal ? (
 				<>
 					<ModalImages 
-						images={currentProject?.images ? currentProject?.images : ['']} 
-						closeModal={() => setIsActiveModal(!isActiveModal)} 
+						images={currentProject?.images}
+						closeModal={() => setIsActiveModal(!isActiveModal)}
 					/>
 				</>
 			) : null
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
 					{projects?.map((project, i) => (
 						<SwiperSlide key={i}>
 							<div className={styles.overlay} onClick={() => setIsActiveModal(!isActiveModal)} />
-							<img src={project.thumb} alt="Image thumb" className={styles.thumb} />
+							<img src={project.thumb} alt="Image thumb" className={styles.thumb} loading='lazy' />
 						</SwiperSlide>
 					))}
 				</Swiper>
