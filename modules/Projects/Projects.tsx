@@ -10,11 +10,13 @@ import link_icon from '../../public/assets/link_icon.svg'
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
+import ModalImages from 'shared/components/modalImages/ModalImages';
 
 const Projects: React.FC = () => {
 	const projectsService = new ProjectsService('giovanna_projects');
 	const [projects, setProjects] = useState<ProjectsType[]>()
 	const [currentProject, setCurrentProject] = useState<ProjectsType>()
+	const [isActiveModal, setIsActiveModal] = useState<boolean>(false)
 
 	useEffect(() => {
 		let isMounted = true;
@@ -38,6 +40,15 @@ const Projects: React.FC = () => {
 
 	return (
 		<section className={styles.container}>
+			{isActiveModal ? (
+				<>
+					<ModalImages 
+						images={currentProject?.images ? currentProject?.images : ['']} 
+						closeModal={() => setIsActiveModal(!isActiveModal)} 
+					/>
+				</>
+			) : null
+			}
 			<h2>Projects</h2>
 			<div className={styles.projects_wrap}>
 				<div className={styles.project}>
@@ -63,8 +74,8 @@ const Projects: React.FC = () => {
 				>
 					{projects?.map((project, i) => (
 						<SwiperSlide key={i}>
-							<div className={styles.overlay} />
-							<img src={project.thumb} alt="Image thumb" className={styles.thumb} onClick={() => console.log('função')}/>
+							<div className={styles.overlay} onClick={() => setIsActiveModal(!isActiveModal)} />
+							<img src={project.thumb} alt="Image thumb" className={styles.thumb} />
 						</SwiperSlide>
 					))}
 				</Swiper>
