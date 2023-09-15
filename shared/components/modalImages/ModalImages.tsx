@@ -6,7 +6,6 @@ interface ModalInterface {
   closeModal: () => void;
 }
 const ModalImages: React.FC<ModalInterface> = ({images, closeModal}) => {
-  console.log(images)
   return (
     <div className={styles.container_modal}>
       <button onClick={() => closeModal()}>
