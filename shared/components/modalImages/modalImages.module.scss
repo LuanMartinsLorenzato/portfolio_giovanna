@@ -3,12 +3,12 @@
 @tailwind components;
 
 .container_modal {
-	@apply w-full h-screen z-[2] flex flex-col gap-6 fixed top-0 left-0 bg-white/40 py-10 overflow-scroll;
+	@apply w-full h-screen z-[2] flex flex-col gap-6 fixed top-0 left-0 bg-white/40 overflow-scroll;
 	-webkit-backdrop-filter: blur(12px);
 	backdrop-filter: blur(12px); 
 
 	button {
-		@apply absolute top-2 right-2;
+		@apply self-center;
 	}
 
 	.error_notImages {
