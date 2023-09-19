@@ -3,17 +3,17 @@
 @tailwind components;
 
 .container {
-  @apply w-full px-3 h-screen relative;
+  @apply w-full px-3 h-screen flex flex-col self-center;
 
   h2 {
-    @apply -rotate-12;
+    @apply -rotate-12 w-fit;
   }
 
   .projects_wrap {
     @apply flex flex-col;
 
     .project {
-      @apply w-full mt-20 flex flex-col mb-6;
+      @apply w-[366px] mt-20 flex flex-col mb-6 self-center;
 
       .header_description {
         @apply flex w-[330px] self-center items-center gap-[10px] mb-2;
@@ -43,17 +43,53 @@
         }
       }
     }
+
     .overlay {
       @apply w-full h-full absolute top-0 bg-[#252525]/50 transition-opacity duration-700;
       -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px); 
+      backdrop-filter: blur(3px);
     }
 
     .overlay:hover {
       @apply transition-opacity opacity-0 duration-700;
     }
+
     .thumb {
       @apply h-full w-full object-cover;
+    }
+  }
+}
+
+@include tablet() {
+  .container {
+    h2 {
+      @apply -rotate-12 text-6xl ml-3;
+    }
+
+    .projects_wrap {
+      .project {
+        @apply w-[500px] mt-24 mb-9;
+
+        .header_description {
+          @apply w-[450px] gap-[12px] mb-3;
+
+          h3 {
+            @apply text-2xl;
+          }
+
+          .line {
+            @apply h-[2px];
+          }
+
+          img {
+            @apply w-7 h-7;
+          }
+        }
+
+        .description p {
+          @apply w-[420px] text-base;
+        }
+      }
     }
   }
 }

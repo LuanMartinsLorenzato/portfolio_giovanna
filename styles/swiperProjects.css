@@ -15,3 +15,14 @@
 .swiper-pagination-bullet-active {
   background-color: #B06DCF99 !important;
 }
+
+@media(min-width:575px){
+  .swiper {
+    width: 300px;
+    height: 350px;
+  }
+
+  .swiper-pagination {
+    bottom: -30px !important;
+  }
+}
