@@ -12,6 +12,21 @@
 * {
     @apply scroll-smooth;
 }
+body, html {
+ @apply m-0;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
 
 span {
     @apply subtitle-color-light text-font text-xs;

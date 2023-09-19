@@ -1,31 +1,61 @@
-@import '../../styles/mixins'; 
+@import '../../styles/mixins';
 @tailwind utilities;
 @tailwind components;
 
-@include mobile() {
+.container {
+  @apply w-full px-6 top-6 pt-[75px] self-center flex flex-col;
+  height: calc(100vh - 96px);
+
+  .content_description {
+    @apply flex flex-col gap-4 self-center w-full;
+
+    h1 {
+      @apply -rotate-6 mb-1;
+    }
+
+    span {
+      @apply self-center font-00 subtitle-color-dark text-size-01;
+    }
+
+    p {
+      @apply text-right font-00 subtitle-color-dark text-size-01;
+
+      span {
+        @apply title-color subtitle-font-00 subtitle-size-01;
+      }
+    }
+  }
+
+  img {
+    @apply self-center;
+  }
+}
+
+@include tablet() {
+
   .container {
-    @apply w-full px-6 top-6 pt-[75px];
-    height: calc(100vh - 96px);
-
     .content_description {
-      @apply flex flex-col gap-4;
-
+      @apply w-[540px];
+      
       h1 {
-        @apply -rotate-6 mb-1;
+        @apply text-7xl mb-4;
       }
 
       span {
-        @apply self-center font-00 subtitle-color-dark text-size-01;
+        @apply text-3xl;
       }
 
       p {
-        @apply text-right font-00 subtitle-color-dark text-size-01;
+        @apply text-3xl;
 
         span {
-          @apply title-color subtitle-font-00 subtitle-size-01;
+          @apply text-4xl;
         }
       }
     }
 
+    img {
+      @apply w-[350px] 
+    }
   }
 }

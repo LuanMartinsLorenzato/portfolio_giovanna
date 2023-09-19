@@ -17,7 +17,7 @@ const tabs = [
 ]
 
 export default function Header (): JSX.Element {
-  let isMobile = useWindowResize().width < 480 ? true : false;
+  let isMobile = useWindowResize().width < 1200 ? true : false;
   let [showMenuMobile, setShowMenuMobile] = useState(false);
   let [isActiveLanguage, setIsActiveLanguage] = useState(false);
   let [iconColors, setIconColors] = useState(nightIcon.src);
@@ -72,9 +72,9 @@ export default function Header (): JSX.Element {
             <nav>
               {
                 tabs.map(tab => (
-                  <button key={tab.name} className={styles.tabs}>
+                  <a href={tab.path} key={tab.name} className={styles.tabs}>
                     {tab.name}
-                  </button>
+                  </a>
                 ))
               }
             </nav>
@@ -84,17 +84,11 @@ export default function Header (): JSX.Element {
           <>
             <div className={styles.overlay}>
               <nav className={styles.navBar}>
-
-                {/* Borda lateral esquerda */}
                 <div className={styles.border_position}>
                   <div className={styles.border_gradient} />
                   <div className={styles.border_gradient} />
                 </div>
-
-                {/* Icone do nome */}
                 <img src={nameIcon.src} alt="Menu" className={styles.name_icon}/>
-
-                {/* Botão de fechar */}
                 <button onClick={handleMenu} className={styles.closeMenuBtn}>
                   <img src={closeMenuIcon.src} alt="Menu" />
                 </button>
