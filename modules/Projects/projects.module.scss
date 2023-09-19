@@ -63,7 +63,7 @@
 @include tablet() {
   .container {
     h2 {
-      @apply -rotate-12 text-6xl ml-3;
+      @apply -rotate-12 text-[55px] ml-3;
     }
 
     .projects_wrap {
