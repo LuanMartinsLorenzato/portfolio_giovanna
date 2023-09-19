@@ -7,17 +7,34 @@
 
 	.position_messages {
 		@apply mt-auto;
+
+		.message {
+			@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-[8px] relative;
+
+			.left_mensage {
+				@apply absolute -left-2 bottom-0;
+			}
+
+			p {
+				@apply text-color-dark text-font text-xs height-00;
+			}
+		}
 	}
 
-	.message {
-		@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-[9px] relative;
 
-		.left_mensage {
-			@apply absolute -left-2 bottom-0;
-		}
+}
 
-		p {
-			@apply text-color-dark text-font text-xs height-00;
+@include tablet() {
+	.container_messages {
+		@apply mb-1;
+
+		.position_messages {
+
+			.message {
+				p {
+					@apply text-[13px] leading-4;
+				}
+			}
 		}
 	}
 }

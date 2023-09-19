@@ -48,12 +48,12 @@ const AboutMe: React.FC = () => {
 						<span>Giovanna Conti Martins</span>
 						<div className={styles.ageAndLocation}>
 							<div className={styles.items}>
-								<img src={celebrate_icon.src} alt="Celebrate Icon" width={12} height={12} />
-								<span>{getAge()}</span>
+								<img src={celebrate_icon.src} alt="Celebrate Icon" className={styles.icon_celebrate}/>
+								<p>{getAge()}</p>
 							</div>
 							<div className={styles.items}>
-								<img src={map_icon.src} alt="Map Icon" width={22} height={13} />
-								<span>{getLocation()}</span>
+								<img src={map_icon.src} alt="Map Icon" className={styles.icon_map}/>
+								<p>{getLocation()}</p>
 							</div>
 						</div>
 					</div>
