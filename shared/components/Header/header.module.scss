@@ -1,10 +1,10 @@
-@import '../../../styles/_mixins.scss'; 
+@import '../../../styles/_mixins.scss';
 @tailwind utilities;
 @tailwind components;
 
-.header{
+.header {
   @apply w-full flex justify-between bg-transparent h-24;
-    
+
   .actions {
     @apply flex pl-6 gap-5;
 
@@ -34,7 +34,7 @@
 
     .border_position {
       @apply h-full absolute left-0 w-[1px] flex flex-col gap-[10%];
-      
+
       .border_gradient {
         @apply h-1/3 bg-gradient-to-t from-transparent via-[#A65AC9];
       }
@@ -43,7 +43,7 @@
     .navBar {
       @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
       -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px); 
+      backdrop-filter: blur(12px);
 
       .name_icon {
         @apply absolute left-6 top-[31px];
@@ -64,6 +64,66 @@
   }
 }
 
-@include mobile() {
+@include tablet() {
+  .header {
+    @apply w-full flex justify-between bg-transparent h-24;
 
+    .actions {
+      @apply flex pl-6 gap-5;
+
+      .languages_container {
+        @apply absolute top-[70px] flex flex-col border-l-[0.5px] border-[#646464] pl-2 transition ease-in-out duration-700 -translate-x-2;
+      }
+
+      .slide_off {
+        @apply -translate-x-28;
+      }
+
+      button {
+        @apply text-left;
+      }
+    }
+
+    .menuBtn {
+      @apply pr-6;
+    }
+
+    .blur_menu {
+      @apply blur;
+    }
+
+    .overlay {
+      @apply absolute h-screen w-screen bg-white/5;
+
+      .border_position {
+        @apply h-full absolute left-0 w-[1px] flex flex-col gap-[10%];
+
+        .border_gradient {
+          @apply h-1/3 bg-gradient-to-t from-transparent via-[#A65AC9];
+        }
+      }
+
+      .navBar {
+        @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+
+        .name_icon {
+          @apply absolute left-6 top-[31px];
+        }
+
+        .closeMenuBtn {
+          @apply absolute right-6 top-[31px];
+        }
+
+        .container_tabs {
+          @apply flex flex-col w-full h-full pt-40 gap-16 pl-6;
+        }
+
+        .tabs {
+          @apply text-size-00 font-00 subtitle-color-light;
+        }
+      }
+    }
+  }
 }
