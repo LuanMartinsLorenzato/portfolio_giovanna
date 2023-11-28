@@ -1,7 +1,12 @@
 export type ProjectsType = {
-	client: string;
-	description: string;
-	images: Array<string>;
-	title: string;
-    thumb: string;
-}
+  client: string;
+  description: string;
+  images: Array<string>;
+  title: string;
+  thumb: string;
+};
+
+export type tabsType = {
+  name: string;
+  path: string;
+};

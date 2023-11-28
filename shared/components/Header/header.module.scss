@@ -1,4 +1,4 @@
-@import '../../../styles/_mixins.scss';
+@import "../../../styles/_mixins.scss";
 @tailwind utilities;
 @tailwind components;
 
@@ -125,5 +125,46 @@
         }
       }
     }
+  }
+}
+
+@include tablet() {
+  .header {
+    @apply h-[105px] px-5 flex flex-col;
+
+    .navBar_desktop {
+      @apply relative flex w-full h-[55px] justify-center justify-items-center gap-[45px] border-b-2 border-gradient;
+
+      .name_icon {
+        @apply absolute left-0 self-center w-[35px] h-[36px];
+      }
+
+      .tabs {
+        @apply subtitle-color-dark header-font-00 w-fit h-fit self-center last:title-color last:header-font-01 last:absolute last:right-0;
+      }
+    }
+
+    .actions{
+      @apply w-full flex justify-between justify-items-center p-0;
+
+      .languages_container {
+        @apply top-[110px];
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .border-gradient {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(
+        to right,
+        transparent 10%,
+        #a65ac9 30%,
+        rgba(128, 128, 128, 0.372) 50%,
+        #a65ac9 70%,
+        transparent 90%
+      ) 1;
+    border-image-slice: 1;
   }
 }
