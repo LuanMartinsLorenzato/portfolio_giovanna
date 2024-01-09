@@ -6,7 +6,7 @@
 	@apply h-full flex flex-col mb-1;
 
 	.position_messages {
-		@apply mt-11;
+		@apply mt-auto;
 
 		.message {
 			@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-[8px] relative;

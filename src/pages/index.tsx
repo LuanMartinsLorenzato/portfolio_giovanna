@@ -10,14 +10,14 @@ export default function OnePage() {
   return (
     <>
       <main className={styles.main}
-      style={{
-        backgroundImage: `url('${bg.src}')`,
-      }}>
+        style={{
+          backgroundImage: `url('${bg.src}')`,
+        }}>
         <Header />
         <Home />
         <AboutMe />
        {/* <Projects />
-        <Contact /> */}
+          <Contact /> */}
       </main>
     </>
   )

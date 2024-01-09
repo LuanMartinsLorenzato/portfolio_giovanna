@@ -6,6 +6,7 @@ import { ProjectsType } from 'shared/utils/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards, Pagination } from 'swiper/modules';
 import link_icon from '../../public/assets/link_icon.svg'
+import Image from "next/image";
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -55,7 +56,7 @@ const Projects: React.FC = () => {
 					<div className={styles.header_description}>
 						<h3>{currentProject?.title}.</h3>
 						<div className={styles.line} />
-						<img src={link_icon.src} alt="Link Icon" />
+						<Image src={link_icon} alt="Link Icon" priority={true} placeholder='empty'/>
 					</div>
 					<div className={styles.description}>
 						<div className={styles.border_line} />
