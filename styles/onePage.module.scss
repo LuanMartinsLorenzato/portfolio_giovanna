@@ -4,5 +4,9 @@
 @tailwind utilities;
 
 .main {
-    @apply bg-[#1a1a1a] overflow-hidden scroll-smooth flex flex-col w-full;
+    @apply bg-[#191919] overflow-hidden scroll-smooth flex flex-col w-full h-full relative;
+
+    .content {
+        @apply absolute h-full w-full;
+    }
 }

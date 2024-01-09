@@ -3,7 +3,7 @@
 @tailwind components;
 
 .about {
-  @apply w-full px-3 h-screen flex flex-col self-center;
+  @apply w-full px-3 mb-10 flex flex-col self-center;
 
   .about_container {
     @apply flex w-fit self-center;
@@ -208,7 +208,7 @@
         @apply w-full flex flex-col px-3 h-[540px];
 
         .container_input {
-          @apply h-[51px];
+          @apply h-[60px];
 
           .icon_left {
             @apply w-[34px] h-[34px];

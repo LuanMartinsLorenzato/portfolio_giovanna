@@ -9,15 +9,16 @@ import Contact from 'modules/contact/Contact';
 export default function OnePage() {
   return (
     <>
-      <main className={styles.main}
-        style={{
+      <main className={styles.main}>
+        <div className={styles.content} style={{
           backgroundImage: `url('${bg.src}')`,
-        }}>
+          opacity: 0.20,
+        }} />
         <Header />
         <Home />
         <AboutMe />
-       {/* <Projects />
-          <Contact /> */}
+        <Projects />
+        {/*  <Contact /> */}
       </main>
     </>
   )
