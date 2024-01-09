@@ -1,9 +1,9 @@
-@import '../../styles/mixins';
+@import "../../styles/mixins";
 @tailwind utilities;
 @tailwind components;
 
 .container_contact {
-  @apply flex flex-col gap-[50px] pt-8;
+  @apply flex flex-col gap-[50px] pt-8 z-10;
 
   .wrap_header {
     @apply w-[384px] flex flex-col self-center justify-center;
@@ -110,6 +110,46 @@
       }
       p {
         @apply text-size-02;
+      }
+    }
+  }
+}
+
+@include desktop() {
+  .container_contact {
+    .wrap_header {
+      @apply w-[1000px];
+
+      h3 {
+        @apply text-[65px] -translate-x-72 duration-1000 ease-in-out transform;
+      }
+
+      .and {
+        @apply text-size-01 -translate-y-2;
+      }
+
+      .second_p {
+        @apply text-[35px] translate-x-11 duration-1000 ease-in-out transform;
+
+        span {
+          @apply text-[45px];
+        }
+      }
+    }
+
+    .wrap_contacts {
+      @apply w-[90%];
+
+      .contact {
+        .qrCode_img {
+          @apply w-[228px] h-[233px];
+        }
+
+        .wrap_content {
+          p {
+            @apply first:text-[35px] last:text-[30px];
+          }
+        }
       }
     }
   }

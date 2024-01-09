@@ -13,12 +13,13 @@ export default function OnePage() {
         <div className={styles.content} style={{
           backgroundImage: `url('${bg.src}')`,
           opacity: 0.20,
+          zIndex: 0,
         }} />
         <Header />
         <Home />
         <AboutMe />
         <Projects />
-        {/*  <Contact /> */}
+        <Contact />
       </main>
     </>
   )

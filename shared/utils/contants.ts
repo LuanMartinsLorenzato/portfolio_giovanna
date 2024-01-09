@@ -1,4 +1,6 @@
-import { tabsType } from "./types";
+import { SocialType, tabsType } from "./types";
+import zap_img from '../../public/assets/imgs/zap_img.png'
+import linkedin_img from '../../public/assets/imgs/linkedin_img.png'
 
 export const tabs: Array<tabsType> = [
   { name: "Home", path: "#home" },
@@ -15,4 +17,9 @@ export const messagesArr: Array<string> = [
 	'Meu objetivo é me tornar UX/UI especialista e poder liderar time de web designers.',
 	'Espero poder fazer parte do seu time de Web Designers.',
   '',
+]
+
+export const SOCIAL: SocialType[] = [
+	{name: 'WhatsApp', value: '(11) 943383791', img: `${zap_img.src}`},
+	{name: 'LinkedIn', value: 'www.linkedin.com/in/giovanna-conti-martins',  img: `${linkedin_img.src}`},
 ]
