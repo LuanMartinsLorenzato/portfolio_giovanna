@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import left_mensage_icon_dark from '../../../public/assets/left_mensage_icon_dark.svg'
+import Image from "next/image";
+import fig_luck from '../../../public/assets/imgs/fig_luck.png'
 
 interface ChatProps {
   messages: (string | JSX.Element)[];
@@ -41,26 +43,25 @@ const AnimateChat: React.FC<ChatProps> = ({ messages, delayBetweenMessages = 2 }
   return (
     <div className={styles.container_messages} ref={ref}>
       <div className={styles.position_messages}>
-        {visibleMessages.map((message, index) => (
+        {visibleMessages.map((message, i) => (
           <motion.div
             className={styles.message}
-            key={index}
+            key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }} // Duração da animação
           >
-            {typeof message === 'string' ? (
-              <>
-                <img src={left_mensage_icon_dark.src} alt="Left icon" className={styles.left_mensage}/>
-                <p>{message}</p>
-              </>
-            ) : ( 
-            <> 
-              <img src={left_mensage_icon_dark.src} alt="Left icon" className={styles.left_mensage}/>
-              {message}
-            </>  
-            )}
+            <>
+              <Image src={left_mensage_icon_dark} alt="Left icon" className={styles.left_mensage} />
+              {i === 4 ? (
+                <Image src={fig_luck} alt='Luck' className={styles.img} />
+              ) :
+                (
+                  <p>{message}</p>
+                )
+              }
+            </>
           </motion.div>
         ))}
       </div>

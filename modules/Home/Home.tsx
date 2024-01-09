@@ -1,7 +1,7 @@
-
 import React from 'react';
 import styles from './home.module.scss'
-import imgGi from '../../public/imgs/img_gi.png'
+import imgGi from '../../public/assets/imgs/img_gi.png'
+import Image from 'next/image';
 
 const Home: React.FC = () => {
 	return (
@@ -11,7 +11,15 @@ const Home: React.FC = () => {
 				<span>My name is Giovanna Conti...</span>
 				<p>I'am <span>Web Designer.</span></p>
 			</div>
-			<img src={imgGi.src} alt="Image work time!" />
+			<Image
+				src={imgGi}
+				alt="Image work time!"
+				priority={true}
+				placeholder="empty"
+				className={styles.img}
+				width={285}
+				height={214}
+			/>
 		</section>
 	);
 };

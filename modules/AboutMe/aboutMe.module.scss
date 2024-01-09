@@ -2,7 +2,7 @@
 @tailwind utilities;
 @tailwind components;
 
-.container {
+.about {
   @apply w-full px-3 h-screen flex flex-col self-center;
 
   .about_container {
@@ -14,7 +14,7 @@
   }
 
   .container_description {
-    @apply border border-[#666] w-full h-[501px] mt-32 rounded-2xl bg-white/5 shadow-lg flex flex-col;
+    @apply border border-[#666] w-full mt-16 rounded-2xl bg-white/5 shadow-lg flex flex-col;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
 
@@ -51,7 +51,7 @@
             }
 
             p {
-              @apply text-[11px] h-[14px] text-color-dark font-00;
+              @apply text-[11px] text-color-dark font-00;
             }
           }
         }
@@ -63,10 +63,10 @@
     }
 
     .high_description {
-      @apply w-full h-[434px] flex flex-col px-3;
+      @apply w-full h-full flex flex-col px-3;
 
       .container_input {
-        @apply mt-auto mb-[15px] w-full h-9 self-center border-[0.5px] border-[#666] rounded-md bg-[#4F4F4F]/50 flex justify-around items-center;
+        @apply mt-auto mb-[15px] w-full h-9 self-center border-[0.5px] border-[#666] rounded-2xl bg-[#4F4F4F]/50 flex justify-around items-center;
 
         .button_getInTouch {
           @apply w-4/5 h-full text-left flex items-center pl-2;
@@ -81,7 +81,8 @@
 }
 
 @include tablet() {
-  .container {
+  .about {
+    @apply justify-center;
 
     .about_container {
 
@@ -91,7 +92,7 @@
     }
 
     .container_description {
-      @apply mt-36 w-[92%] self-center;
+      @apply w-[92%] self-center;
 
       .wrap_low_description {
         @apply h-[80px];
@@ -113,6 +114,78 @@
             @apply gap-11;
 
             .items {
+              @apply gap-3 h-5;
+
+              .icon_celebrate {
+                @apply w-[19px] h-[19px];
+              }
+
+              .icon_map {
+                @apply w-8 h-5;
+              }
+
+              p {
+                @apply text-size-02;
+              }
+            }
+          }
+        }
+      }
+
+      .high_description {
+        @apply w-full flex flex-col px-3;
+
+        .container_input {
+          @apply h-10;
+
+          .button_getInTouch {
+            span {
+              @apply text-[15px];
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop() {
+  .about {
+    @apply flex-row-reverse gap-6 justify-start;
+
+    .about_container {
+      @apply flex-col items-center self-start mt-5 w-[15%];
+
+      h2 {
+        @apply first:-rotate-2 last:-rotate-12 w-fit last:translate-y-0 last:-translate-x-0 text-[65px];
+      }
+    }
+
+    .container_description {
+      @apply mt-0 h-[616px] w-[899px];
+
+      .wrap_low_description {
+        @apply h-[117px];
+
+        .border_img {
+          @apply w-[205px] h-[205px];
+
+          .online_stats {
+            @apply w-[29px] h-[29px] bottom-0 right-9;
+          }
+        }
+
+        .low_description {
+          @apply gap-5;
+
+          span {
+            @apply text-[35px] text-left;
+          }
+
+          .ageAndLocation {
+            @apply gap-12 justify-start;
+
+            .items {
               @apply gap-3 h-[20px];
 
               .icon_celebrate {
@@ -123,8 +196,8 @@
                 @apply w-[32px] h-5;
               }
 
-              span {
-                @apply text-size-02;
+              p {
+                @apply text-size-02 text-center;
               }
             }
           }
@@ -132,12 +205,22 @@
       }
 
       .high_description {
-        @apply w-full h-[434px] flex flex-col px-3;
-  
+        @apply w-full flex flex-col px-3;
+
         .container_input {
-          @apply h-10;
-  
+          @apply h-[51px];
+
+          .icon_left {
+            @apply w-[34px] h-[34px];
+          }
+
+          .icon_right {
+            @apply w-[31px] h-[31px];
+          }
+
           .button_getInTouch {
+
+
             span {
               @apply text-[17px];
             }

@@ -6,7 +6,7 @@
 	@apply h-full flex flex-col mb-1;
 
 	.position_messages {
-		@apply mt-auto;
+		@apply mt-11;
 
 		.message {
 			@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-[8px] relative;
@@ -33,6 +33,22 @@
 			.message {
 				p {
 					@apply text-[13px] leading-4;
+				}
+			}
+		}
+	}
+}
+
+@include desktop() {
+	.container_messages {
+		.position_messages {
+			.message {
+				p {
+					@apply text-[20px] leading-6;
+				}
+
+				.img {
+					@apply w-[82px] h-[94px];
 				}
 			}
 		}

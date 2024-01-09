@@ -128,7 +128,7 @@
   }
 }
 
-@include tablet() {
+@include desktop() {
   .header {
     @apply h-[105px] px-5 flex flex-col;
 

@@ -16,8 +16,8 @@ export default function OnePage() {
         <Header />
         <Home />
         <AboutMe />
-        <Projects />
-        <Contact />
+       {/* <Projects />
+        <Contact /> */}
       </main>
     </>
   )

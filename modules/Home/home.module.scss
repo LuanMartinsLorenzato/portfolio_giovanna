@@ -3,14 +3,13 @@
 @tailwind components;
 
 .container {
-  @apply w-full px-6 top-6 pt-[75px] self-center flex flex-col;
-  height: calc(100vh - 96px);
+  @apply w-full flex flex-col mt-[49.5px] px-6 mb-40 self-center;
 
   .content_description {
     @apply flex flex-col gap-4 self-center w-full;
 
     h1 {
-      @apply -rotate-6 mb-1;
+      @apply -rotate-6 mb-1 w-fit;
     }
 
     span {
@@ -18,7 +17,7 @@
     }
 
     p {
-      @apply text-right font-00 subtitle-color-dark text-size-01;
+      @apply text-right font-00 subtitle-color-dark text-size-01 w-fit self-end;
 
       span {
         @apply title-color subtitle-font-00 subtitle-size-01;
@@ -26,7 +25,13 @@
     }
   }
 
-  img {
+  .img {
+    @apply -rotate-6;
+  }
+}
+
+@media (min-width: 500px) {
+  .container .img {
     @apply self-center;
   }
 }
@@ -35,8 +40,6 @@
 
   .container {
     .content_description {
-      @apply w-[540px];
-      
       h1 {
         @apply text-7xl mb-4;
       }
@@ -54,8 +57,22 @@
       }
     }
 
-    img {
-      @apply w-[350px] 
+    .img {
+      @apply w-[350px] rotate-0
+    }
+  }
+}
+
+@include desktop() {
+
+  .container {
+    @apply flex-row w-full p-0;
+    .content_description {
+      @apply h-[450px];
+    }
+
+    .img {
+      @apply w-[550.33px] h-[448.36px];
     }
   }
 }
