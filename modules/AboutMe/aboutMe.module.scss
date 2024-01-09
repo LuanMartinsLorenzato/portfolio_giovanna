@@ -3,7 +3,7 @@
 @tailwind components;
 
 .about {
-  @apply w-full px-3 mb-10 flex flex-col self-center;
+  @apply w-full px-3 mb-11 flex flex-col self-center;
 
   .about_container {
     @apply flex w-fit self-center;
@@ -151,7 +151,7 @@
 
 @include desktop() {
   .about {
-    @apply flex-row-reverse gap-6 justify-center;
+    @apply flex-row-reverse gap-6 justify-center mb-[149px];
 
     .about_container {
       @apply flex-col items-center self-start mt-5;

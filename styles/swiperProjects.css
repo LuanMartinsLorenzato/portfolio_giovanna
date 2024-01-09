@@ -16,10 +16,21 @@
   background-color: #B06DCF99 !important;
 }
 
-@media(min-width:575px){
+@media(min-width:768px){
   .swiper {
     width: 300px;
     height: 350px;
+  }
+
+  .swiper-pagination {
+    bottom: -30px !important;
+  }
+}
+
+@media(min-width:1200px){
+  .swiper {
+    width: 542px;
+    height: 603px;
   }
 
   .swiper-pagination {

@@ -30,8 +30,8 @@ const Projects: React.FC = () => {
 		}
 		getProjects();
 		return () => {
-      isMounted = false; 
-    };
+			isMounted = false;
+		};
 	}, [])
 
 	const setIndexProject = (indexProject: number) => {
@@ -40,47 +40,42 @@ const Projects: React.FC = () => {
 	}
 
 	return (
-		<section className={styles.container} id='projects'>
-			{isActiveModal ? (
-				<>
-					<ModalImages 
-						images={currentProject?.images}
-						closeModal={() => setIsActiveModal(!isActiveModal)}
-					/>
-				</>
-			) : null
-			}
+		<section className={styles.projects} id='projects'>
+			{isActiveModal && (
+				<ModalImages
+					images={currentProject?.images}
+					closeModal={() => setIsActiveModal(!isActiveModal)}
+				/>
+			)}
 			<h2>Projects</h2>
-			<div className={styles.projects_wrap}>
-				<div className={styles.project}>
-					<div className={styles.header_description}>
-						<h3>{currentProject?.title}.</h3>
-						<div className={styles.line} />
-						<Image src={link_icon} alt="Link Icon" priority={true} placeholder='empty'/>
-					</div>
-					<div className={styles.description}>
-						<div className={styles.border_line} />
-						<p>{currentProject?.description}</p>
-					</div>
+			<div className={styles.project}>
+				<div className={styles.header_description}>
+					<h3>{currentProject?.title}.</h3>
+					<div className={styles.line} />
+					<Image src={link_icon} alt="Link Icon" priority={true} placeholder='empty' />
 				</div>
-				<Swiper
-					effect={'cards'}
-					grabCursor={true}
-					modules={[EffectCards, Pagination]}
-					className="mySwiper"
-					pagination={{
-						dynamicBullets: true,
-					}}
-					onSlideChange={(swiper) => setIndexProject(swiper.activeIndex)}
-				>
-					{projects?.map((project, i) => (
-						<SwiperSlide key={i}>
-							<div className={styles.overlay} onClick={() => setIsActiveModal(!isActiveModal)} />
-							<img src={project.thumb} alt="Image thumb" className={styles.thumb} loading='lazy' />
-						</SwiperSlide>
-					))}
-				</Swiper>
+				<div className={styles.description}>
+					<div className={styles.border_line} />
+					<p>{currentProject?.description}</p>
+				</div>
 			</div>
+			<Swiper
+				effect={'cards'}
+				grabCursor={true}
+				modules={[EffectCards, Pagination]}
+				className={styles.mySwiper}
+				pagination={{
+					dynamicBullets: true,
+				}}
+				onSlideChange={(swiper) => setIndexProject(swiper.activeIndex)}
+			>
+				{projects?.map((project, i) => (
+					<SwiperSlide key={i}>
+						<div className={styles.overlay} onClick={() => setIsActiveModal(!isActiveModal)} />
+						<img src={project.thumb} alt="Image thumb" className={styles.thumb} loading='lazy' />
+					</SwiperSlide>
+				))}
+			</Swiper>
 		</section>
 	);
 };
