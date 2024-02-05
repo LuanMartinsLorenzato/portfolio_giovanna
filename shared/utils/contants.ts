@@ -3,10 +3,10 @@ import zap_img from '../../public/assets/imgs/zap_img.png'
 import linkedin_img from '../../public/assets/imgs/linkedin_img.png'
 
 export const tabs: Array<tabsType> = [
-  { name: "Home", path: "#home" },
-  { name: "About", path: "#about" },
-  { name: "Projects", path: "#projects" },
-  { name: "Contact me", path: "#contact" },
+  { name: "home", path: "#home" },
+  { name: "about", path: "#about" },
+  { name: "projects", path: "#projects" },
+  { name: "contact_me", path: "#contact" },
 ];
 
 export const LOCATION: string = 'São Paulo - Brasil';

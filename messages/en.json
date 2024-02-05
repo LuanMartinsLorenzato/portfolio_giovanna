@@ -1,0 +1,16 @@
+{
+    "Header": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact_me": "Contact Me"
+    },
+    "Home": {
+    },
+    "About": {
+    },
+    "Projects": {
+    },
+    "Contact_me": {
+    }
+}

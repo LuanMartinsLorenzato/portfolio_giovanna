@@ -1,4 +1,5 @@
 import styles from '../../styles/onePage.module.scss'
+import { GetStaticPropsContext } from 'next';
 import Header from '../../shared/components/Header/Header';
 import Home from 'modules/Home/Home';
 import AboutMe from 'modules/AboutMe/AboutMe';
@@ -23,4 +24,11 @@ export default function OnePage() {
       </main>
     </>
   )
+}
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

@@ -14,8 +14,8 @@ const Contact: React.FC = () => {
 				<p className={styles.second_p}>Let's make something <span>great together.</span></p>
 			</div>
 			<div className={styles.wrap_contacts}>
-				{SOCIAL.map((social) => (
-					<div className={styles.contact}>
+				{SOCIAL.map((social, i) => (
+					<div className={styles.contact} key={i}>
 						<Image src={social.img} alt={social.name} width={103} height={103} priority={true} placeholder='empty' className={styles.qrCode_img}/>
 						<div className={styles.wrap_content}>
 							<p>{social.name}</p>
