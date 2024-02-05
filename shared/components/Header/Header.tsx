@@ -6,15 +6,20 @@ import languageIcon from "../../../public/assets/language-icon.svg";
 import dayIcon from "../../../public/assets/day-icon.svg";
 import nightIcon from "../../../public/assets/night-icon.svg";
 import useWindowResize from "../../hooks/useWindowResize";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { tabs } from "shared/utils/contants";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Header(): JSX.Element {
   let isMobile = useWindowResize().width < 1200 ? true : false;
   let [showMenuMobile, setShowMenuMobile] = useState(false);
   let [isActiveLanguage, setIsActiveLanguage] = useState(false);
   let [iconColors, setIconColors] = useState(nightIcon.src);
+
+  const _t = useTranslations("Header");
+  const { route } = useRouter();
 
   const handleMenu = () => {
     setShowMenuMobile(!showMenuMobile);
@@ -56,10 +61,14 @@ export default function Header(): JSX.Element {
                 id="slideOff"
               >
                 <button>
-                  <span>English</span>
+                  <Link href={route} locale={"en"}>
+                    <span>English</span>
+                  </Link>
                 </button>
                 <button>
-                  <span>Português - Br</span>
+                  <Link href={route} locale={"pt"}>
+                    <span>Português - Br</span>
+                  </Link>
                 </button>
               </div>
               <button onClick={handleColors}>
@@ -88,7 +97,7 @@ export default function Header(): JSX.Element {
               <img src={nameIcon.src} alt="Menu" className={styles.name_icon} />
               {tabs.map((tab) => (
                 <a href={tab.path} key={tab.name} className={styles.tabs}>
-                  {tab.name}
+                  {_t(tab.name)}
                 </a>
               ))}
             </nav>
@@ -106,10 +115,14 @@ export default function Header(): JSX.Element {
                 id="slideOff"
               >
                 <button>
-                  <span>English</span>
+                  <Link href={route} locale={"en"}>
+                    <span>English</span>
+                  </Link>
                 </button>
                 <button>
-                  <span>Português - Br</span>
+                  <Link href={route} locale={"pt"}>
+                    <span>Português - Br</span>
+                  </Link>
                 </button>
               </div>
               <button onClick={handleColors}>
@@ -142,7 +155,7 @@ export default function Header(): JSX.Element {
                 <div className={styles.container_tabs}>
                   {tabs.map((tab) => (
                     <a href={tab.path} key={tab.name} className={styles.tabs}>
-                      {tab.name}
+                      {_t(tab.name)}
                     </a>
                   ))}
                 </div>

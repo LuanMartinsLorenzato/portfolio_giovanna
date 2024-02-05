@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import left_mensage_icon_dark from '../../../public/assets/left_mensage_icon_dark.svg'
 import Image from "next/image";
 import fig_luck from '../../../public/assets/imgs/fig_luck.png'
+import { useTranslations } from 'next-intl';
 
 interface ChatProps {
   messages: (string | JSX.Element)[];
@@ -12,6 +13,7 @@ interface ChatProps {
 }
 
 const AnimateChat: React.FC<ChatProps> = ({ messages, delayBetweenMessages = 2 }) => {
+	const _t = useTranslations("About.chat");
   const [visibleMessages, setVisibleMessages] = useState<(string | JSX.Element)[]>([]);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -58,7 +60,7 @@ const AnimateChat: React.FC<ChatProps> = ({ messages, delayBetweenMessages = 2 }
                 <Image src={fig_luck} alt='Luck' className={styles.img} />
               ) :
                 (
-                  <p>{message}</p>
+                  <p>{_t(message)}</p>
                 )
               }
             </>

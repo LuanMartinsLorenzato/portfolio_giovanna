@@ -12,12 +12,16 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 import ModalImages from 'shared/components/modalImages/ModalImages';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 
 const Projects: React.FC = () => {
 	const projectsService = new ProjectsService('giovanna_projects');
 	const [projects, setProjects] = useState<ProjectsType[]>()
 	const [currentProject, setCurrentProject] = useState<ProjectsType>()
 	const [isActiveModal, setIsActiveModal] = useState<boolean>(false)
+	const _t = useTranslations("Projects");
+	const { locale } = useRouter();
 
 	useEffect(() => {
 		let isMounted = true;
@@ -47,7 +51,7 @@ const Projects: React.FC = () => {
 					closeModal={() => setIsActiveModal(!isActiveModal)}
 				/>
 			)}
-			<h2>Projects</h2>
+			<h2>{_t('title')}</h2>
 			<div className={styles.project}>
 				<div className={styles.header_description}>
 					<h3>{currentProject?.title}.</h3>
@@ -56,7 +60,7 @@ const Projects: React.FC = () => {
 				</div>
 				<div className={styles.description}>
 					<div className={styles.border_line} />
-					<p>{currentProject?.description}</p>
+					<p>{locale === 'en' ? currentProject?.en_description : currentProject?.description}</p>
 				</div>
 			</div>
 			<Swiper

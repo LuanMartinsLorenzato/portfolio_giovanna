@@ -1,0 +1,37 @@
+{
+    "Header": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact_me": "Contact Me"
+    },
+    "Home": {
+        "hello": "Hello",
+        "name": "My name is Giovanna Conti...",
+        "i": "I'am",
+        "design": "Web Designer."
+    },
+    "About": {
+        "title_1": "About",
+        "title_2": "me!",
+        "years": "years",
+        "get_in_touch": "Get in touch...",
+        "chat": {
+            "line_0": "Oii!! Eu sou estudante de Designer Gráfico e Digital",
+            "line_1": "Comecei minha jornada na área faz pouquíssimo tempo, por isso ainda tenho apenas alguns projetos desenvolvidos e outros ainda em processo de criação. Estou em busca de uma experiencia “oficial” na área para poder desenvolver e aprender muito mais!",
+            "line_2": "Meu objetivo é me tornar UX/UI especialista e poder liderar time de web designers.",
+            "line_3": "Espero poder fazer parte do seu time de Web Designers."
+        }
+    },
+    "Projects": {
+        "title": "Projects"
+    },
+    "Contact_me": {
+        "title_1": "Get in thouch",
+        "title_2": "and",
+        "title_3": "Let's make something",
+        "title_4": "great together.",
+        "designed": "Designed by",
+        "developed": "Developed by"
+    }
+}

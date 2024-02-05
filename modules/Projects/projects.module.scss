@@ -1,14 +1,13 @@
-@import '../../styles/mixins';
+@import "../../styles/mixins";
 @tailwind utilities;
 @tailwind components;
 
 .projects {
-  @apply w-full px-3 grid grid-cols-1 self-center justify-items-center;
+  @apply w-full px-3 grid grid-cols-1 self-center justify-items-center z-10 mb-8;
 
   h2 {
     @apply -rotate-12 w-fit place-self-start;
   }
-
 
   .project {
     @apply w-[366px] flex flex-col mb-6 mt-9 self-center;
@@ -55,11 +54,11 @@
   .thumb {
     @apply h-full w-full object-cover;
   }
-
 }
 
 @include tablet() {
   .projects {
+    @apply mb-[60px];
     h2 {
       @apply -rotate-12 text-[55px] ml-3;
     }
@@ -95,11 +94,11 @@
     @apply grid-cols-2 justify-center;
 
     h2 {
-      @apply text-[65px] m-0;
+      @apply text-[65px] m-0 place-self-center;
     }
 
     .project {
-      @apply w-[500px] mb-9 col-start-1 row-start-2 place-self-start;
+      @apply w-[500px] mb-9 col-start-1 row-start-2 place-self-center;
 
       .header_description {
         @apply w-[450px] gap-[12px] mb-3;

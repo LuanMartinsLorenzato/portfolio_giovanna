@@ -1,4 +1,5 @@
 import styles from '../../styles/onePage.module.scss'
+import { GetStaticPropsContext } from 'next';
 import Header from '../../shared/components/Header/Header';
 import Home from 'modules/Home/Home';
 import AboutMe from 'modules/AboutMe/AboutMe';
@@ -13,13 +14,21 @@ export default function OnePage() {
         <div className={styles.content} style={{
           backgroundImage: `url('${bg.src}')`,
           opacity: 0.20,
+          zIndex: 0,
         }} />
         <Header />
         <Home />
         <AboutMe />
         <Projects />
-        {/*  <Contact /> */}
+        <Contact />
       </main>
     </>
   )
+}
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default
+    }
+  };
 }

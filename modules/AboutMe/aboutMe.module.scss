@@ -3,7 +3,7 @@
 @tailwind components;
 
 .about {
-  @apply w-full px-3 mb-11 flex flex-col self-center;
+  @apply w-full px-3 mb-11 flex flex-col self-center z-10;
 
   .about_container {
     @apply flex w-fit self-center;

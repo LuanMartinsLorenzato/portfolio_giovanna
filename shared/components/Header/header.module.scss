@@ -3,7 +3,7 @@
 @tailwind components;
 
 .header {
-  @apply w-full flex justify-between bg-transparent h-24;
+  @apply w-full flex justify-between bg-transparent h-24 z-10;
 
   .actions {
     @apply flex pl-6 gap-5;
@@ -41,7 +41,7 @@
     }
 
     .navBar {
-      @apply fixed justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
+      @apply absolute justify-between right-0 transition ease-in-out duration-700 translate-x-full h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
 
@@ -54,12 +54,15 @@
       }
 
       .container_tabs {
-        @apply flex flex-col w-full h-full pt-40 gap-16 pl-6;
+        @apply flex flex-col w-full h-full pt-40 gap-16 pl-[45px];
       }
 
       .tabs {
-        @apply text-size-00 font-00 subtitle-color-light;
+        @apply text-size-00 font-00 text-[#fff] last:text-[#A65AC9] last:font-01 last:text-xl;
       }
+    }
+    .slide_off_navBar {
+      @apply translate-x-full;
     }
   }
 }
