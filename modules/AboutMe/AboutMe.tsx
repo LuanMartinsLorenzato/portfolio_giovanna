@@ -9,8 +9,11 @@ import AnimateChat from '../../shared/components/animateChat/animateChat'
 import { messagesArr, LOCATION } from '../../shared/utils/contants'
 import { AgeController } from 'shared/controllers/age-controller';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const AboutMe: React.FC = () => {
+	const _t = useTranslations("About");
+
 	const getAge = () => {
 		const ageController = new AgeController(1999, 12, 22)
 		return ageController.getAge();
@@ -27,8 +30,8 @@ const AboutMe: React.FC = () => {
 	return (
 		<section className={styles.about} id='about'>
 			<div className={styles.about_container}>
-				<h2>About</h2>
-				<h2>me!</h2>
+				<h2>{_t('title_1')}</h2>
+				<h2>{_t('title_2')}</h2>
 			</div>
 			<section className={styles.container_description}>
 				<div className={styles.wrap_low_description}>
@@ -40,7 +43,7 @@ const AboutMe: React.FC = () => {
 						<div className={styles.ageAndLocation}>
 							<div className={styles.items}>
 								<Image src={celebrate_icon} alt="Celebrate Icon" className={styles.icon_celebrate} priority={true} placeholder='empty' />
-								<p>{getAge()} years</p>
+								<p>{getAge()} {_t('years')}</p>
 							</div>
 							<div className={styles.items}>
 								<Image src={map_icon} alt="Map Icon" className={styles.icon_map} priority={true} placeholder='empty' />
@@ -55,7 +58,7 @@ const AboutMe: React.FC = () => {
 					<div className={styles.container_input}>
 						<Image src={emoji_icon} alt="Map Icon" width={20} height={20} priority={true} placeholder='empty' className={styles.icon_left} />
 						<button className={styles.button_getInTouch} onClick={() => { popUp() }} >
-							<span>Get in touch...</span>
+							<span>{_t('get_in_touch')}</span>
 						</button>
 						<Image src={send_icon} alt="Map Icon" width={20} height={20} priority={true} placeholder='empty' className={styles.icon_right} />
 					</div>

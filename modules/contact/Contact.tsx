@@ -4,14 +4,17 @@ import styles from './contact.module.scss'
 import dot_icon from '../../public/assets/dot_icon.svg'
 import Image from 'next/image';
 import { SOCIAL } from '../../shared/utils/contants'
+import { useTranslations } from 'next-intl';
 
 const Contact: React.FC = () => {
+	const _t = useTranslations("Contact_me");
+
 	return (
 		<footer className={styles.container_contact} id='contact'>
 			<div className={styles.wrap_header}>
-				<h3>Get in thouch</h3>
-				<p className={styles.and}>and</p>
-				<p className={styles.second_p}>Let's make something <span>great together.</span></p>
+				<h3>{_t('title_1')}</h3>
+				<p className={styles.and}>{_t('title_2')}</p>
+				<p className={styles.second_p}>{_t('title_3')} <span>{_t('title_4')}</span></p>
 			</div>
 			<div className={styles.wrap_contacts}>
 				{SOCIAL.map((social, i) => (
@@ -25,11 +28,11 @@ const Contact: React.FC = () => {
 				))}
 			</div>
 			<div className={styles.developed_by}>
-				<p>Designed by Giovanna Conti</p>
+				<p>{_t('designed')} Giovanna Conti</p>
 				<Image src={dot_icon.src} alt="Dot Icon" width={15} height={15} priority={true} placeholder='empty' />
-				<p>Developed by Luan Lorenzato</p>
+				<p>{_t('developed')} Luan Lorenzato</p>
 				<Image src={dot_icon.src} alt="Dot Icon" width={15} height={15} priority={true} placeholder='empty' />
-				<p>2023</p>
+				<p>2024</p>
 			</div>
 		</footer>
 	);
