@@ -3,19 +3,19 @@
         "home": "Home",
         "about": "Sobre",
         "projects": "Projetos",
-        "contact_me": "Entre em contato"
+        "contact_me": "Contato"
     },
     "Home": {
-        "hello": "Olá",
-        "name": "Me chamo Giovanna Conti...",
-        "i": "Sou",
+        "hello": "Oláa!",
+        "name": "Meu nome é Giovanna Conti...",
+        "i": "Eu sou",
         "design": "Web Designer."
     },
     "About": {
-        "title_1": "About",
-        "title_2": "me!",
-        "years": "years",
-        "get_in_touch": "Get in touch...",
+        "title_1": "Sobre",
+        "title_2": "mim!",
+        "years": "anos",
+        "get_in_touch": "Entrar em contato...",
         "chat": {
             "line_0": "Oii!! Eu sou estudante de Designer Gráfico e Digital",
             "line_1": "Comecei minha jornada na área faz pouquíssimo tempo, por isso ainda tenho apenas alguns projetos desenvolvidos e outros ainda em processo de criação. Estou em busca de uma experiencia “oficial” na área para poder desenvolver e aprender muito mais!",
@@ -27,10 +27,10 @@
         "title": "Projetos"
     },
     "Contact_me": {
-        "title_1": "Get in thouch",
-        "title_2": "and",
-        "title_3": "Let's make something",
-        "title_4": "great together.",
+        "title_1": "Entre em contato",
+        "title_2": "e",
+        "title_3": "Bora fazer algo",
+        "title_4": "maravilhoso juntos.",
         "designed": "Designed by",
         "developed": "Developed by"
     }
