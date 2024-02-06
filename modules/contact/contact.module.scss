@@ -95,7 +95,7 @@
     @apply gap-14;
 
     .wrap_header, .wrap_header_darkMode {
-      @apply w-[500px];
+      @apply w-[700px];
 
       h3 {
         @apply text-[55px];
@@ -115,7 +115,7 @@
     }
 
     .wrap_contacts {
-      @apply w-[500px] gap-[65px] mb-14;
+      @apply w-[700px] gap-[65px] mb-14;
 
       .contact {
         @apply gap-6;
@@ -147,7 +147,7 @@
       @apply w-[1000px];
 
       h3 {
-        @apply text-[65px] -translate-x-72 duration-1000 ease-in-out transform;
+        @apply text-[65px] -translate-x-56 duration-1000 ease-in-out transform;
       }
 
       .and {
