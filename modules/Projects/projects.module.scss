@@ -8,15 +8,33 @@
   h2 {
     @apply -rotate-12 w-fit place-self-start;
   }
-
   .project {
+    h3 {
+      @apply subtitle-color-light;
+    }
+
+    .description p {
+      @apply text-color-light;
+    }
+  }
+
+  .project_darkMode {
+    h3 {
+      @apply subtitle-color-dark;
+    }
+
+    .description p {
+      @apply text-color-dark;
+    }
+  }
+  .project, .project_darkMode {
     @apply w-[366px] flex flex-col mb-6 mt-9 self-center;
 
     .header_description {
       @apply flex w-[330px] self-center items-center gap-[10px] mb-2;
 
       h3 {
-        @apply font-00 text-xl text-[#CBCBCB] min-w-fit;
+        @apply font-00 text-xl min-w-fit;
       }
 
       .line {
@@ -36,7 +54,7 @@
       }
 
       p {
-        @apply w-[300px] text-sm text-font text-[#fff] h-[209px] mb-[25px] leading-[19px];
+        @apply w-[300px] text-sm text-font h-[209px] mb-[25px] leading-[19px];
       }
     }
   }
@@ -63,7 +81,7 @@
       @apply -rotate-12 text-[55px] ml-3;
     }
 
-    .project {
+    .project, .project_darkMode {
       @apply w-[500px] mb-9;
 
       .header_description {
@@ -97,7 +115,7 @@
       @apply text-[65px] m-0 place-self-center;
     }
 
-    .project {
+    .project, .project_darkMode {
       @apply w-[500px] mb-9 col-start-1 row-start-2 place-self-center;
 
       .header_description {

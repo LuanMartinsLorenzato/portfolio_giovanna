@@ -5,6 +5,7 @@ import ProjectsService from 'shared/services/projects-service';
 import { ProjectsType } from 'shared/utils/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards, Pagination } from 'swiper/modules';
+import link_icon_darkMode from '../../public/assets/link_icon_darkMode.svg'
 import link_icon from '../../public/assets/link_icon.svg'
 import Image from "next/image";
 
@@ -14,6 +15,7 @@ import 'swiper/css/pagination';
 import ModalImages from 'shared/components/modalImages/ModalImages';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 
 const Projects: React.FC = () => {
 	const projectsService = new ProjectsService('giovanna_projects');
@@ -22,6 +24,8 @@ const Projects: React.FC = () => {
 	const [isActiveModal, setIsActiveModal] = useState<boolean>(false)
 	const _t = useTranslations("Projects");
 	const { locale } = useRouter();
+	const { theme } = useTheme();
+
 
 	useEffect(() => {
 		let isMounted = true;
@@ -52,11 +56,11 @@ const Projects: React.FC = () => {
 				/>
 			)}
 			<h2>{_t('title')}</h2>
-			<div className={styles.project}>
+			<div className={theme == 'dark' ? styles.project_darkMode : styles.project}>
 				<div className={styles.header_description}>
 					<h3>{currentProject?.title}.</h3>
 					<div className={styles.line} />
-					<Image src={link_icon} alt="Link Icon" priority={true} placeholder='empty' />
+					<Image src={theme == 'dark' ? link_icon_darkMode : link_icon} alt="Link Icon" priority={true} placeholder='empty' />
 				</div>
 				<div className={styles.description}>
 					<div className={styles.border_line} />
