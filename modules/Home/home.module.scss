@@ -51,7 +51,7 @@
 @include tablet() {
 
   .container {
-    .content_description {
+    .content_description, .content_description_darkMode {
       h1 {
         @apply text-7xl mb-4;
       }
@@ -79,7 +79,7 @@
 
   .container {
     @apply flex-row w-full p-0;
-    .content_description {
+    .content_description, .content_description_darkMode {
       @apply h-[450px];
     }
 

@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 
 const Home: React.FC = () => {
 	const _t = useTranslations("Home");
-	const { theme, setTheme } = useTheme();
+	const { theme } = useTheme();
 
 
 	return (

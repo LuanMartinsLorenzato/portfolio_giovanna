@@ -14,7 +14,13 @@
   }
 
   .container_description {
-    @apply border border-[#666] w-full mt-16 h-[501px] rounded-2xl bg-white/5 shadow-lg flex flex-col;
+    @apply bg-white/50;
+  }
+  .container_description_darkMode {
+    @apply bg-[#8D8D8D]/20;
+  }
+  .container_description, .container_description_darkMode {
+    @apply border border-[#666] w-full mt-16 h-[501px] rounded-2xl shadow-lg flex flex-col;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
 
@@ -30,10 +36,22 @@
       }
 
       .low_description {
+        span, .ageAndLocation .items p {
+          @apply text-color-light;
+        }
+      }
+
+      .low_description_darkMode {
+        span, .ageAndLocation .items p {
+          @apply text-color-dark;
+        }
+      }
+
+      .low_description, .low_description_darkMode {
         @apply h-full flex flex-col w-[70%] justify-center gap-2;
 
         span {
-          @apply text-color-dark text-size-01 font-00 text-center;
+          @apply text-size-01 font-00 text-center;
         }
 
         .ageAndLocation {
@@ -51,7 +69,7 @@
             }
 
             p {
-              @apply text-[11px] text-color-dark font-00;
+              @apply text-[11px] font-00;
             }
           }
         }
@@ -65,8 +83,16 @@
     .high_description {
       @apply w-full h-[434px] flex flex-col px-3;
 
+      .container_input_darkMode {
+        @apply bg-[#4F4F4F]/50;
+      }
+
       .container_input {
-        @apply mt-auto mb-[15px] w-full h-9 self-center border-[0.5px] border-[#666] rounded-2xl bg-[#4F4F4F]/50 flex justify-around items-center;
+        @apply bg-[#EAEAEA]/50;
+      }
+
+      .container_input, .container_input_darkMode {
+        @apply mt-auto mb-[15px] w-full h-9 self-center border-[0.5px] border-[#666] rounded-md flex justify-around items-center;
 
         .button_getInTouch {
           @apply w-4/5 h-full text-left flex items-center pl-2;
@@ -91,7 +117,7 @@
       }
     }
 
-    .container_description {
+    .container_description, .container_description_darkMode {
       @apply w-[92%] self-center;
 
       .wrap_low_description {
@@ -105,7 +131,7 @@
           }
         }
 
-        .low_description {
+        .low_description, .low_description_darkMode {
           span {
             @apply text-3xl;
           }
@@ -135,7 +161,7 @@
       .high_description {
         @apply w-full flex flex-col px-3;
 
-        .container_input {
+        .container_input, .container_input_darkMode {
           @apply h-10;
 
           .button_getInTouch {
@@ -161,7 +187,7 @@
       }
     }
 
-    .container_description {
+    .container_description, .container_description_darkMode {
       @apply mt-0 h-[616px] w-[899px];
 
       .wrap_low_description {
@@ -175,7 +201,7 @@
           }
         }
 
-        .low_description {
+        .low_description, .low_description_darkMode {
           @apply gap-5;
 
           span {
@@ -207,7 +233,7 @@
       .high_description {
         @apply w-full flex flex-col px-3 h-[540px];
 
-        .container_input {
+        .container_input, .container_input_darkMode {
           @apply h-[60px];
 
           .icon_left {
