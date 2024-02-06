@@ -18,6 +18,14 @@
 
     button {
       @apply text-left;
+
+      .language_link_darkMode span {
+        @apply subtitle-color-dark;
+      }
+
+      .language_link span {
+        @apply subtitle-color-light;
+      }
     }
   }
 
@@ -28,9 +36,17 @@
   .blur_menu {
     @apply blur;
   }
-
   .overlay {
-    @apply absolute h-screen w-screen bg-white/5;
+    @apply bg-[#646464]/25;
+  }
+
+  .overlay_darkMode {
+    @apply bg-white/5
+  }
+
+  .overlay,
+  .overlay_darkMode {
+    @apply absolute h-screen w-screen;
 
     .border_position {
       @apply h-full absolute left-0 w-[1px] flex flex-col gap-[10%];
@@ -41,24 +57,41 @@
     }
 
     .navBar {
-      @apply absolute justify-between right-0 transition ease-in-out duration-700 translate-x-full h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] bg-white/10 z-10;
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
+      @apply bg-white/50;
+    }
+
+    .navBar_darkMode {
+      @apply bg-[#646464]/50;
+    }
+
+    .navBar, .navBar_darkMode {
+      @apply absolute justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] ;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
 
       .name_icon {
-        @apply absolute left-6 top-[31px];
+        @apply absolute left-6 top-[35px];
       }
 
       .closeMenuBtn {
-        @apply absolute right-6 top-[31px];
+        @apply absolute right-6 top-[25px];
       }
 
       .container_tabs {
         @apply flex flex-col w-full h-full pt-40 gap-16 pl-[45px];
       }
 
+      .tabs,
+      .tabs_darkMode {
+        @apply text-size-00 font-00 last:font-01 last:text-xl;
+      }
+
       .tabs {
-        @apply text-size-00 font-00 text-[#fff] last:text-[#A65AC9] last:font-01 last:text-xl;
+        @apply subtitle-color-light last:text-[#A65AC9];
+      }
+
+      .tabs_darkMode {
+        @apply subtitle-color-dark last:text-[#A65AC9];
       }
     }
     .slide_off_navBar {
@@ -142,12 +175,21 @@
         @apply absolute left-0 self-center w-[35px] h-[36px];
       }
 
+      .tabs,
+      .tabs_darkMode {
+        @apply header-font-00 w-fit h-fit self-center last:title-color last:header-font-01 last:absolute last:right-0;
+      }
+
       .tabs {
-        @apply subtitle-color-dark header-font-00 w-fit h-fit self-center last:title-color last:header-font-01 last:absolute last:right-0;
+        @apply subtitle-color-light;
+      }
+
+      .tabs_darkMode {
+        @apply subtitle-color-dark;
       }
     }
 
-    .actions{
+    .actions {
       @apply w-full flex justify-between justify-items-center p-0;
 
       .languages_container {
@@ -167,7 +209,8 @@
         rgba(128, 128, 128, 0.372) 50%,
         #a65ac9 70%,
         transparent 90%
-      ) 1;
+      )
+      1;
     border-image-slice: 1;
   }
 }

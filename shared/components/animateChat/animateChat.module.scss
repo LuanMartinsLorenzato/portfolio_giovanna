@@ -9,14 +9,34 @@
 		@apply mt-auto;
 
 		.message {
-			@apply bg-[#515151] py-[10px] px-4 rounded-3xl w-fit mb-[8px] relative;
+			@apply bg-[#DFDFDF];
+
+			p {
+				@apply text-color-light;
+			}
+		}
+
+		.message_darkMode {
+			@apply bg-[#515151];
+
+			p {
+				@apply text-color-dark
+			}
+		}
+
+		.message, .message_darkMode {
+			@apply py-[10px] px-4 rounded-3xl w-fit mb-[8px] relative;
 
 			.left_mensage {
 				@apply absolute -left-2 bottom-0;
 			}
 
 			p {
-				@apply text-color-dark text-font text-xs height-00;
+				@apply  text-font text-xs height-00;
+			}
+
+			.img {
+				@apply w-[68px] h-[76px];
 			}
 		}
 	}
@@ -30,7 +50,7 @@
 
 		.position_messages {
 
-			.message {
+			.message, .message_darkMode {
 				p {
 					@apply text-[13px] leading-4;
 				}
@@ -42,7 +62,7 @@
 @include desktop() {
 	.container_messages {
 		.position_messages {
-			.message {
+			.message, .message_darkMode {
 				p {
 					@apply text-[20px] leading-6;
 				}

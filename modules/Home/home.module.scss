@@ -3,9 +3,21 @@
 @tailwind components;
 
 .container {
-  @apply w-full flex flex-col mt-[49.5px] px-6 mb-40 self-center z-10;
+  @apply w-full flex flex-col mt-[49.5px] px-6 mb-40 self-center;
+
+  .content_description_darkMode {
+    span, p {
+      @apply subtitle-color-dark;
+    }
+  }
 
   .content_description {
+    span, p {
+      @apply subtitle-color-light;
+    }
+  }
+
+  .content_description, .content_description_darkMode {
     @apply flex flex-col gap-4 self-center w-full;
 
     h1 {
@@ -13,11 +25,11 @@
     }
 
     span {
-      @apply self-center font-00 subtitle-color-dark text-size-01;
+      @apply self-center font-00 text-size-01;
     }
 
     p {
-      @apply text-right font-00 subtitle-color-dark text-size-01 w-fit self-end;
+      @apply text-right font-00 text-size-01 w-fit self-end;
 
       span {
         @apply title-color subtitle-font-00 subtitle-size-01;
@@ -39,7 +51,7 @@
 @include tablet() {
 
   .container {
-    .content_description {
+    .content_description, .content_description_darkMode {
       h1 {
         @apply text-7xl mb-4;
       }
@@ -67,7 +79,7 @@
 
   .container {
     @apply flex-row w-full p-0;
-    .content_description {
+    .content_description, .content_description_darkMode {
       @apply h-[450px];
     }
 

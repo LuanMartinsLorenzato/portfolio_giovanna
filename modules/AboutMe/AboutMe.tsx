@@ -10,9 +10,11 @@ import { messagesArr, LOCATION } from '../../shared/utils/contants'
 import { AgeController } from 'shared/controllers/age-controller';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 
 const AboutMe: React.FC = () => {
 	const _t = useTranslations("About");
+	const { theme } = useTheme();
 
 	const getAge = () => {
 		const ageController = new AgeController(1999, 12, 22)
@@ -33,12 +35,12 @@ const AboutMe: React.FC = () => {
 				<h2>{_t('title_1')}</h2>
 				<h2>{_t('title_2')}</h2>
 			</div>
-			<section className={styles.container_description}>
+			<section className={theme == 'dark' ? styles.container_description_darkMode : styles.container_description}>
 				<div className={styles.wrap_low_description}>
 					<div className={styles.border_img}>
 						<div className={styles.online_stats} />
 					</div>
-					<div className={styles.low_description}>
+					<div className={theme == 'dark' ? styles.low_description_darkMode : styles.low_description}>
 						<span>Giovanna Conti Martins</span>
 						<div className={styles.ageAndLocation}>
 							<div className={styles.items}>
@@ -55,7 +57,7 @@ const AboutMe: React.FC = () => {
 				<hr />
 				<div className={styles.high_description}>
 					<AnimateChat messages={messagesArr} />
-					<div className={styles.container_input}>
+					<div className={theme == 'dark' ? styles.container_input_darkMode : styles.container_input}>
 						<Image src={emoji_icon} alt="Map Icon" width={20} height={20} priority={true} placeholder='empty' className={styles.icon_left} />
 						<button className={styles.button_getInTouch} onClick={() => { popUp() }} >
 							<span>{_t('get_in_touch')}</span>

@@ -3,10 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.main {
-    @apply bg-[#191919] overflow-hidden scroll-smooth flex flex-col w-full h-full relative;
+.main, .main_darkMode {
+    @apply overflow-hidden scroll-smooth flex flex-col w-full h-full relative;
 
     .content {
         @apply absolute h-full w-full;
     }
+}
+
+.main {
+    @apply bg-white;
+}
+
+.main_darkMode {
+    @apply bg-[#191919];
 }
