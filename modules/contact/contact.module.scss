@@ -5,7 +5,17 @@
 .container_contact {
   @apply flex flex-col gap-[50px];
 
+  .wrap_header_darkMode {
+    .second_p {
+      @apply text-[#CBCBCB];
+    }
+  }
   .wrap_header {
+    .second_p {
+      @apply text-[#646464];
+    }
+  }
+  .wrap_header, .wrap_header_darkMode {
     @apply w-[384px] flex flex-col self-center justify-center;
 
     h3 {
@@ -13,11 +23,11 @@
     }
 
     .and {
-      @apply text-[15px] text-[#838383];
+      @apply text-[15px] text-[#838383];;
     }
 
     .second_p {
-      @apply text-[20px] text-[#CBCBCB];
+      @apply text-[20px];
 
       span {
         @apply text-[30px] subtitle-font-00 text-[#A65AC9];
@@ -44,22 +54,38 @@
       img {
         @apply w-[103px] h-[103px];
       }
-
+      .wrap_content_darkMode {
+        @apply first:subtitle-color-dark last:text-[#fff]
+      }
       .wrap_content {
+        @apply first:subtitle-color-light last:subtitle-color-light
+      }
+      .wrap_content, .wrap_content_darkMode {
         @apply flex flex-col justify-center gap-3;
 
         p {
-          @apply first:subtitle-color-dark font-00 first:text-size-01 w-fit last:text-[16px] last:text-[#fff];
+          @apply font-00 first:text-size-01 w-fit last:text-[16px] ;
         }
       }
     }
   }
 
   .developed_by {
+    p {
+      @apply text-black;
+    }
+  }
+
+  .developed_by_darkMode {
+    p {
+      @apply subtitle-color-dark;
+    }
+  }
+  .developed_by, .developed_by_darkMode {
     @apply mt-auto flex justify-center;
 
     p {
-      @apply text-[10px] text-color-dark font-00;
+      @apply text-[10px] font-00;
     }
   }
 }
@@ -68,7 +94,7 @@
   .container_contact {
     @apply gap-14;
 
-    .wrap_header {
+    .wrap_header, .wrap_header_darkMode {
       @apply w-[500px];
 
       h3 {
@@ -94,7 +120,7 @@
       .contact {
         @apply gap-6;
 
-        .wrap_content {
+        .wrap_content, .wrap_content_darkMode {
           p {
             @apply first:text-[25px] last:text-[20px];
           }
@@ -102,7 +128,7 @@
       }
     }
 
-    .developed_by {
+    .developed_by, .developed_by_darkMode {
       @apply h-10 items-center;
 
       img {
@@ -117,7 +143,7 @@
 
 @include desktop() {
   .container_contact {
-    .wrap_header {
+    .wrap_header, .wrap_header_darkMode {
       @apply w-[1000px];
 
       h3 {
@@ -145,7 +171,7 @@
           @apply w-[228px] h-[233px];
         }
 
-        .wrap_content {
+        .wrap_content, .wrap_content_darkMode {
           p {
             @apply first:text-[35px] last:text-[30px];
           }
