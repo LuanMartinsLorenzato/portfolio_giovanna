@@ -1,6 +1,7 @@
 import styles from "./header.module.scss";
 import menuIcon from "../../../public/assets/menu-icon.svg";
 import menuIcon_darkMode from "../../../public/assets/menu-icon_darkMode.svg";
+import closeMenuIcon_darkMode from "../../../public/assets/close-menu-icon-dark.svg";
 import closeMenuIcon from "../../../public/assets/close-menu-icon-light.svg";
 import nameIcon from "../../../public/assets/name-icon.svg";
 import iconL_darkMode from "../../../public/assets/iconL_darkMode.svg";
@@ -143,8 +144,8 @@ export default function Header(): JSX.Element {
         )}
         {showMenuMobile && (
           <>
-            <div className={styles.overlay}>
-              <nav className={styles.navBar}>
+            <div className={theme == 'dark' ? styles.overlay_darkMode : styles.overlay}>
+              <nav className={theme == 'dark' ? styles.navBar_darkMode : styles.navBar}>
                 <div className={styles.border_position}>
                   <div className={styles.border_gradient} />
                   <div className={styles.border_gradient} />
@@ -155,7 +156,7 @@ export default function Header(): JSX.Element {
                   className={styles.name_icon}
                 />
                 <button onClick={handleMenu} className={styles.closeMenuBtn}>
-                  <img src={closeMenuIcon.src} alt="Menu" />
+                  <img src={theme == 'dark' ? closeMenuIcon_darkMode.src : closeMenuIcon.src} alt="Menu" />
                 </button>
                 <div className={styles.container_tabs}>
                   {tabs.map((tab) => (
