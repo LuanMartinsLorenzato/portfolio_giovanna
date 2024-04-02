@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
 			<div className={theme == 'dark' ?  styles.developed_by_darkMode : styles.developed_by}>
 				<p>{_t('designed')} Giovanna Conti</p>
 				<Image src={dot_icon.src} alt="Dot Icon" width={15} height={15} priority={true} placeholder='empty' />
-				<p>{_t('developed')} Luan Lorenzato</p>
+				<p>{_t('developed')} <a href="#" target="_blank" rel="noopener noreferrer">Luan Lorenzato</a></p>
 				<Image src={dot_icon.src} alt="Dot Icon" width={15} height={15} priority={true} placeholder='empty' />
 				<p>2024</p>
 			</div>

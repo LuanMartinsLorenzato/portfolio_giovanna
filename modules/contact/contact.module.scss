@@ -3,7 +3,7 @@
 @tailwind components;
 
 .container_contact {
-  @apply flex flex-col gap-[50px];
+  @apply flex flex-col gap-[50px] z-[1];
 
   .wrap_header_darkMode {
     .second_p {
@@ -73,12 +73,20 @@
   .developed_by {
     p {
       @apply text-black;
+
+      a {
+        @apply underline cursor-pointer;
+      }
     }
   }
 
   .developed_by_darkMode {
     p {
       @apply subtitle-color-dark;
+
+      a {
+        @apply underline cursor-pointer;
+      }
     }
   }
   .developed_by, .developed_by_darkMode {
@@ -136,6 +144,10 @@
       }
       p {
         @apply text-size-02;
+
+        a {
+          @apply underline-offset-1 cursor-pointer;
+        }
       }
     }
   }
