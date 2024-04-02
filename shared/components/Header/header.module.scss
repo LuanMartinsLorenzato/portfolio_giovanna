@@ -3,13 +3,13 @@
 @tailwind components;
 
 .header {
-  @apply w-full flex justify-between bg-transparent h-24 z-10;
+  @apply absolute w-full flex justify-between bg-transparent h-[135px] z-10;
 
   .actions {
     @apply flex pl-6 gap-5;
 
     .languages_container {
-      @apply absolute top-[70px] flex flex-col border-l-[0.5px] border-[#646464] pl-2 transition ease-in-out duration-700 -translate-x-2;
+      @apply absolute top-[100px] flex flex-col border-l-[0.5px] border-[#646464] pl-2 transition ease-in-out duration-700 -translate-x-2;
     }
 
     .slide_off {

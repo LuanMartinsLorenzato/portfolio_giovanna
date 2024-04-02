@@ -3,7 +3,7 @@
 @tailwind components;
 
 .container_contact {
-  @apply flex flex-col gap-[50px] z-[1];
+  @apply flex flex-col gap-[50px] z-[1] h-screen justify-center;
 
   .wrap_header_darkMode {
     .second_p {
@@ -90,7 +90,7 @@
     }
   }
   .developed_by, .developed_by_darkMode {
-    @apply mt-auto flex justify-center;
+    @apply flex justify-center absolute bottom-0 self-center;
 
     p {
       @apply text-[10px] font-00;

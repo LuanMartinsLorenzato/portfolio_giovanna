@@ -3,11 +3,8 @@
 @tailwind components;
 
 .projects {
-  @apply w-full px-3 grid grid-cols-1 self-center justify-items-center mb-8;
+  @apply w-full px-3 flex flex-col self-center h-screen justify-center;
 
-  h2 {
-    @apply -rotate-12 w-fit place-self-start;
-  }
   .project {
     h3 {
       @apply subtitle-color-light;
@@ -27,11 +24,16 @@
       @apply text-color-dark;
     }
   }
-  .project, .project_darkMode {
-    @apply w-[366px] flex flex-col mb-6 mt-9 self-center;
+  .project,
+  .project_darkMode {
+    @apply w-[366px] flex flex-col self-center;
+
+    h2 {
+      @apply -rotate-12 w-fit mb-5 ml-3;
+    }
 
     .header_description {
-      @apply flex w-[330px] self-center items-center gap-[10px] mb-2;
+      @apply flex w-[330px] self-center items-center gap-[10px] mb-2 mt-7;
 
       h3 {
         @apply font-00 text-xl min-w-fit;
@@ -47,7 +49,7 @@
     }
 
     .description {
-      @apply flex relative justify-center;
+      @apply flex relative justify-center mb-7;
 
       .border_line {
         @apply absolute left-2 bottom-0 w-[30%] h-[40%] border-l-[1.5px] border-b-[1.5px] border-[#A65AC9] rounded-bl-[60px];
@@ -76,13 +78,13 @@
 
 @include tablet() {
   .projects {
-    @apply mb-[60px];
-    h2 {
-      @apply -rotate-12 text-[55px] ml-3;
-    }
-
-    .project, .project_darkMode {
+    .project,
+    .project_darkMode {
       @apply w-[500px] mb-9;
+
+      h2 {
+        @apply text-[55px] ml-3;
+      }
 
       .header_description {
         @apply w-[450px] gap-[12px] mb-3;
@@ -109,17 +111,18 @@
 
 @include desktop() {
   .projects {
-    @apply grid-cols-2 justify-center;
+    @apply flex-row gap-5;
 
-    h2 {
-      @apply text-[65px] m-0 place-self-center;
-    }
+    .project,
+    .project_darkMode {
+      @apply w-[500px];
 
-    .project, .project_darkMode {
-      @apply w-[500px] mb-9 col-start-1 row-start-2 place-self-center;
+      h2 {
+        @apply text-[65px] m-0;
+      }
 
       .header_description {
-        @apply w-[450px] gap-[12px] mb-3;
+        @apply w-[450px] gap-[12px] mb-3 mt-28;
 
         h3 {
           @apply text-2xl;
@@ -133,13 +136,15 @@
           @apply w-7 h-7;
         }
       }
-
+      .description .border_line {
+        @apply w-[43%] h-[52%];
+      }
       .description p {
         @apply w-[420px] text-base;
       }
     }
     .mySwiper {
-      @apply row-start-1 row-end-3 col-start-2;
+      @apply self-center m-0;
     }
   }
 }

@@ -3,7 +3,7 @@
 @tailwind components;
 
 .about {
-  @apply w-full px-3 mb-11 flex flex-col self-center;
+  @apply w-full px-3 flex flex-col self-center h-screen justify-center;
 
   .about_container {
     @apply flex w-fit self-center;
@@ -176,7 +176,7 @@
 
 @include desktop() {
   .about {
-    @apply gap-8 justify-center mb-[149px];
+    @apply gap-8 justify-center;
 
     .about_container {
       @apply gap-7;
