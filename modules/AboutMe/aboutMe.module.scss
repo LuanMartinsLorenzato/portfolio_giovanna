@@ -3,7 +3,7 @@
 @tailwind components;
 
 .about {
-  @apply w-full px-3 mb-11 flex flex-col self-center;
+  @apply w-full px-3 flex flex-col self-center h-screen justify-center;
 
   .about_container {
     @apply flex w-fit self-center;
@@ -110,8 +110,7 @@
   .about {
     @apply justify-center;
 
-    .about_container {
-
+    .about_container {      
       h2 {
         @apply text-[55px];
       }
@@ -177,10 +176,10 @@
 
 @include desktop() {
   .about {
-    @apply flex-row-reverse gap-6 justify-center mb-[149px];
+    @apply gap-8 justify-center;
 
     .about_container {
-      @apply flex-col items-center self-start mt-5;
+      @apply gap-7;
 
       h2 {
         @apply first:-rotate-2 last:-rotate-12 w-fit last:translate-y-0 last:-translate-x-0 text-[65px];

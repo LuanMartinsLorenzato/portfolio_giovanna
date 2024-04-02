@@ -3,7 +3,7 @@
 @tailwind components;
 
 .container {
-  @apply w-full flex flex-col mt-[49.5px] px-6 mb-40 self-center;
+  @apply w-full flex flex-col px-6 self-center h-screen pt-[135px];
 
   .content_description_darkMode {
     span, p {
@@ -18,10 +18,10 @@
   }
 
   .content_description, .content_description_darkMode {
-    @apply flex flex-col gap-4 self-center w-full;
+    @apply flex flex-col gap-5 self-center w-full mb-3;
 
     h1 {
-      @apply -rotate-6 mb-1 w-fit;
+      @apply -rotate-6 w-fit;
     }
 
     span {
