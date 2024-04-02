@@ -103,6 +103,8 @@ export default function Header(): JSX.Element {
                   alt="Change colors"
                   width={25}
                   height={25}
+                  priority={true}
+                  placeholder="empty"
                 />
               </button>
             </div>
@@ -117,6 +119,8 @@ export default function Header(): JSX.Element {
               <Image
                 src={theme == "dark" ? menuIcon_darkMode : menuIcon}
                 alt="Menu"
+                priority={true}
+                placeholder="empty"
               />
             </button>
           </>
@@ -133,6 +137,7 @@ export default function Header(): JSX.Element {
                     src={nameIcon}
                     alt="Owner logo"
                     priority={true}
+                    placeholder="empty"
                   />
                 </div>
                 <div className={`${styles.image_content} ${!isHovered ? styles.fade_out : styles.fade_in}`}>
@@ -140,6 +145,7 @@ export default function Header(): JSX.Element {
                     src={nameIconHover}
                     alt="Owner logo"
                     priority={true}
+                    placeholder="empty"
                   />
                 </div>
               </div>
@@ -159,10 +165,12 @@ export default function Header(): JSX.Element {
             <div className={styles.actions}>
               <button onClick={handleLanguage}>
                 <Image
-                  src={theme == "dark" ? iconL_darkMode.src : iconL.src}
+                  src={theme == "dark" ? iconL_darkMode : iconL}
                   alt="Languages"
                   width={30}
                   height={30}
+                  priority={true}
+                  placeholder="empty"
                 />
               </button>
               <div
@@ -202,6 +210,8 @@ export default function Header(): JSX.Element {
                   alt="Change colors"
                   width={35}
                   height={35}
+                  priority={true}
+                  placeholder="empty"
                 />
               </button>
             </div>
@@ -224,18 +234,22 @@ export default function Header(): JSX.Element {
                   <div className={styles.border_gradient} />
                 </div>
                 <Image
-                  src={nameIcon.src}
+                  src={nameIcon}
                   alt="Menu"
                   className={styles.name_icon}
+                  priority={true}
+                  placeholder="empty"
                 />
                 <button onClick={handleMenu} className={styles.closeMenuBtn}>
                   <Image
                     src={
                       theme == "dark"
-                        ? closeMenuIcon_darkMode.src
-                        : closeMenuIcon.src
+                        ? closeMenuIcon_darkMode
+                        : closeMenuIcon
                     }
                     alt="Menu"
+                    priority={true}
+                    placeholder="empty"
                   />
                 </button>
                 <div className={styles.container_tabs}>
