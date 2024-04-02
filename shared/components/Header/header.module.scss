@@ -41,7 +41,7 @@
   }
 
   .overlay_darkMode {
-    @apply bg-white/5
+    @apply bg-white/5;
   }
 
   .overlay,
@@ -64,8 +64,9 @@
       @apply bg-[#646464]/50;
     }
 
-    .navBar, .navBar_darkMode {
-      @apply absolute justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px] ;
+    .navBar,
+    .navBar_darkMode {
+      @apply absolute justify-between right-0 h-screen w-2/3 rounded-bl-3xl rounded-tl-3xl py-[90px];
       -webkit-backdrop-filter: blur(15px);
       backdrop-filter: blur(15px);
 
@@ -171,8 +172,20 @@
     .navBar_desktop {
       @apply relative flex w-full h-[55px] justify-center justify-items-center gap-[45px] border-b-2 border-gradient;
 
-      .name_icon {
-        @apply absolute left-0 self-center w-[35px] h-[36px];
+      .container_imgs {
+        @apply absolute left-0 self-center h-[30px] w-48;
+      }
+
+      .image_content {
+        @apply absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out flex;
+      }
+
+      .fade_in {
+        @apply opacity-100;
+      }
+
+      .fade_out {
+        @apply opacity-0;
       }
 
       .tabs,
