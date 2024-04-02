@@ -29,6 +29,10 @@ const AboutMe: React.FC = () => {
 
 	}
 
+	const downloadResume = () => {
+		// fazer download do currículo aqui
+	}
+
 	return (
 		<section className={styles.about} id='about'>
 			<div className={styles.about_container}>
@@ -53,6 +57,7 @@ const AboutMe: React.FC = () => {
 							</div>
 						</div>
 					</div>
+					<button className={styles.resume_btn} onClick={() => {downloadResume}}>{_t('resume')}</button>
 				</div>
 				<hr />
 				<div className={styles.high_description}>
