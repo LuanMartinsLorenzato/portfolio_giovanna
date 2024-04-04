@@ -203,7 +203,7 @@
       @apply mt-0 h-[616px] w-[899px];
 
       .resume_btn {
-        @apply block h-[60px] w-[109px] rounded-[30px] px-5 py-[5px] subtitle-font-00 subtitle-size-01 border border-[#666666] drop-shadow-xl text-[#B06DCF] mx-auto self-center;
+        @apply block h-[60px] w-fit rounded-[30px] px-5 py-[5px] subtitle-font-00 subtitle-size-01 border border-[#666666] drop-shadow-xl text-[#B06DCF] mx-auto self-center;
         -webkit-backdrop-filter: blur(12px);
         backdrop-filter: blur(12px);
       }
