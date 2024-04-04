@@ -36,6 +36,7 @@ export default function Header(): JSX.Element {
 
   const handleLanguage = () => {
     let slideOffElement = document.getElementById("slideOff");
+    console.log(isActiveLanguage);
     isActiveLanguage
       ? slideOffElement?.classList.add(styles.slide_off)
       : slideOffElement?.classList.remove(styles.slide_off);
@@ -79,6 +80,7 @@ export default function Header(): JSX.Element {
                         ? styles.language_link_darkMode
                         : styles.language_link
                     }
+                    onClick={handleLanguage}
                   >
                     <span>English</span>
                   </Link>
@@ -92,6 +94,7 @@ export default function Header(): JSX.Element {
                         ? styles.language_link_darkMode
                         : styles.language_link
                     }
+                    onClick={handleLanguage}
                   >
                     <span>Português - Br</span>
                   </Link>
@@ -132,7 +135,11 @@ export default function Header(): JSX.Element {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <div className={`${styles.image_content} ${isHovered ? styles.fade_out : styles.fade_in}`}>
+                <div
+                  className={`${styles.image_content} ${
+                    isHovered ? styles.fade_out : styles.fade_in
+                  }`}
+                >
                   <Image
                     src={nameIcon}
                     alt="Owner logo"
@@ -140,7 +147,11 @@ export default function Header(): JSX.Element {
                     placeholder="empty"
                   />
                 </div>
-                <div className={`${styles.image_content} ${!isHovered ? styles.fade_out : styles.fade_in}`}>
+                <div
+                  className={`${styles.image_content} ${
+                    !isHovered ? styles.fade_out : styles.fade_in
+                  }`}
+                >
                   <Image
                     src={nameIconHover}
                     alt="Owner logo"
@@ -163,7 +174,7 @@ export default function Header(): JSX.Element {
               ))}
             </nav>
             <div className={styles.actions}>
-              <button onClick={handleLanguage}>
+              <button onMouseEnter={handleLanguage}>
                 <Image
                   src={theme == "dark" ? iconL_darkMode : iconL}
                   alt="Languages"
@@ -186,6 +197,7 @@ export default function Header(): JSX.Element {
                         ? styles.language_link_darkMode
                         : styles.language_link
                     }
+                    onClick={handleLanguage}
                   >
                     <span>English</span>
                   </Link>
@@ -199,6 +211,7 @@ export default function Header(): JSX.Element {
                         ? styles.language_link_darkMode
                         : styles.language_link
                     }
+                    onClick={handleLanguage}
                   >
                     <span>Português - Br</span>
                   </Link>
@@ -243,9 +256,7 @@ export default function Header(): JSX.Element {
                 <button onClick={handleMenu} className={styles.closeMenuBtn}>
                   <Image
                     src={
-                      theme == "dark"
-                        ? closeMenuIcon_darkMode
-                        : closeMenuIcon
+                      theme == "dark" ? closeMenuIcon_darkMode : closeMenuIcon
                     }
                     alt="Menu"
                     priority={true}
