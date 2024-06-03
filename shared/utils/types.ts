@@ -5,6 +5,7 @@ export type ProjectsType = {
   images: Array<string>;
   title: string;
   thumb: string;
+  link: string;
 };
 
 export type tabsType = {

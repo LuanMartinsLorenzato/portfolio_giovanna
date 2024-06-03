@@ -17,6 +17,7 @@ class ProjectsService {
 			querySnapshot.forEach((doc) => {
 				const docData = doc.data() as ProjectsType;
 				if (docData) {
+					console.log(docData);
 					response.push(docData);
 				}
 			});

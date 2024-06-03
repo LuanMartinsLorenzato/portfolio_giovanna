@@ -54,25 +54,32 @@ const Projects: React.FC = () => {
           closeModal={() => setIsActiveModal(!isActiveModal)}
         />
       )}
-      <div className={theme == "dark" ? styles.project_darkMode : styles.project}>
+      <div
+        className={theme == "dark" ? styles.project_darkMode : styles.project}
+      >
         <h2>{_t("title")}</h2>
         <div className={styles.header_description}>
           <h3>{currentProject?.title}.</h3>
           <div className={styles.line} />
-          <Image
-            src={theme == "dark" ? link_icon_darkMode : link_icon}
-            alt="Link Icon"
-            priority={true}
-            placeholder="empty"
-          />
+          <a href={currentProject?.link}>
+            <Image
+              src={theme == "dark" ? link_icon_darkMode : link_icon}
+              alt="Link Icon"
+              priority={true}
+              placeholder="empty"
+            />
+          </a>
         </div>
         <div className={styles.description}>
+          <div className={styles.description_overflow}>
+            <p>
+              {locale === "en"
+                ? currentProject?.en_description
+                : currentProject?.description}
+            </p>
+          </div>
+
           <div className={styles.border_line} />
-          <p>
-            {locale === "en"
-              ? currentProject?.en_description
-              : currentProject?.description}
-          </p>
         </div>
       </div>
       <Swiper

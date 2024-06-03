@@ -11,6 +11,7 @@ import { AgeController } from 'shared/controllers/age-controller';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import { saveAs } from 'file-saver';
 
 const AboutMe: React.FC = () => {
 	const _t = useTranslations("About");
@@ -30,7 +31,9 @@ const AboutMe: React.FC = () => {
 	}
 
 	const downloadResume = () => {
-		// fazer download do currículo aqui
+		const pdfUrl = '../../public/cv_giovannaconti.pdf';
+		console.log(pdfUrl)
+		saveAs(pdfUrl, 'cv_giovannaconti.pdf');
 	}
 
 	return (
@@ -57,7 +60,7 @@ const AboutMe: React.FC = () => {
 							</div>
 						</div>
 					</div>
-					<button className={styles.resume_btn} onClick={() => {downloadResume}}>{_t('resume')}</button>
+					<button className={styles.resume_btn} onClick={() => {downloadResume()}}>{_t('resume')}</button>
 				</div>
 				<hr />
 				<div className={styles.high_description}>
