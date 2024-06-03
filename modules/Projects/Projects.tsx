@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
         <div className={styles.header_description}>
           <h3>{currentProject?.title}.</h3>
           <div className={styles.line} />
-          <a href={currentProject?.link}>
+          <a href={currentProject?.link} target="_blank">
             <Image
               src={theme == "dark" ? link_icon_darkMode : link_icon}
               alt="Link Icon"
